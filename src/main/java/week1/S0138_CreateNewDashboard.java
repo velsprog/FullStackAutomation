@@ -1,5 +1,6 @@
 package week1;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -19,12 +20,14 @@ public class S0138_CreateNewDashboard {
 	static ChromeDriver driver;
 	static WebDriverWait wait;
 	static JavascriptExecutor js;
-	static String opportunityName="Salesforce Automation by Vels";
+	static String dashboardName="Salesforce Automation by Velmurugan";
 	static String actualText;
 
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
+		
+		Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
 		
 		//Webdriver Setup
 		WebDriverManager.chromedriver().setup();
@@ -66,7 +69,7 @@ public class S0138_CreateNewDashboard {
 		
 		//5. Enter Name as 'Salesforce Automation by Your Name ' and Click on Create.
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-		driver.findElement(By.xpath("//input[@id='dashboardNameInput']")).sendKeys(opportunityName);
+		driver.findElement(By.xpath("//input[@id='dashboardNameInput']")).sendKeys(dashboardName);
 		driver.findElement(By.id("submitBtn")).click();
 		
 		//6.Click on Save and Verify Dashboard name.
@@ -78,9 +81,10 @@ public class S0138_CreateNewDashboard {
 		//Expected Result:The New Dashboard is created Successfully
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
 		actualText=driver.findElement(By.xpath("//h1/span[text()='Dashboard']/following-sibling::span")).getText();
-		Assert.assertEquals(actualText, opportunityName);
+		Assert.assertEquals(actualText, dashboardName);
 		driver.switchTo().defaultContent();
 		
+		//Close the driver
 		driver.quit();
 	}
 
