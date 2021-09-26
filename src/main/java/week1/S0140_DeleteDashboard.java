@@ -81,9 +81,9 @@ public class S0140_DeleteDashboard {
 			wait.until(ExpectedConditions.elementToBeClickable(tableElement));
 			List<WebElement> tdElements = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td"));
 			driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td["+(tdElements.size())+"]//button")).click();
+			driver.findElement(By.xpath("//a[@role='menuitem']/span[text()='Delete']")).click();
 			
 			//7.Click on the Delete option in the displayed popup window.
-			driver.findElement(By.xpath("//a[@role='menuitem']/span[text()='Delete']")).click();
 			driver.findElement(By.xpath("//button[@title='Delete']")).click();
 			actualText=driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
 			
