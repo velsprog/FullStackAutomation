@@ -1,7 +1,9 @@
-package week1;
+package selenium.week1;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,18 +18,17 @@ import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S0142_VerifyDashboardSubscribe {
-
+public class S0141_VerifyDashboardssortorderbyDashboardname {
+	
 	static ChromeOptions option;
 	static ChromeDriver driver;
 	static WebDriverWait wait;
 	static JavascriptExecutor js;
-	static String dashboardName = "Velmurugan";
-	static String actualText;
-	static String subscribeText;
-	static WebElement tableElement;
+	static List<String> expectedList;
+	static List<String> actualList;
 	
-	public static void main(String[] args) throws IOException {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
 
 		Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
 
@@ -43,6 +44,9 @@ public class S0142_VerifyDashboardSubscribe {
 
 		// Create JavascriptExecutor instance and assign driver object
 		js = (JavascriptExecutor) driver;
+		
+		expectedList = new ArrayList<String>();
+		actualList = new ArrayList<String>();
 
 		// Wait Setup
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -63,45 +67,47 @@ public class S0142_VerifyDashboardSubscribe {
 
 		// 3. Click View All and click Dashboards from App Launcher
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
-		WebElement dashboardElement = driver
-				.findElement(By.xpath("//p[@class='slds-truncate' and text()='Dashboards']"));
+		WebElement dashboardElement = driver.findElement(By.xpath("//p[@class='slds-truncate' and text()='Dashboards']"));
 		js.executeScript("arguments[0].scrollIntoView();", dashboardElement);
 		dashboardElement.click();
 
 		// 4. Click on the Dashboards tab
 		WebElement dashboardtabElement = driver.findElement(By.xpath("//a[@title='Dashboards']/span"));
 		js.executeScript("arguments[0].click();", dashboardtabElement);
-
-		// 5. Search the Dashboard 'Salesforce Automation by Your Name'
-		driver.findElement(By.xpath("//span[@title='Created On']")).click();
-		driver.findElement(By.xpath("//input[contains(@class,'search-text-field') and contains(@placeholder,'Search recent')]")).sendKeys(dashboardName, Keys.ENTER);
-		tableElement = driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/th//a[contains(@title,'"+dashboardName+"')]"));
-		wait.until(ExpectedConditions.elementToBeClickable(tableElement));
-		subscribeText=driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td[5]//span[@class='slds-assistive-text']")).getText();
-		if(!subscribeText.equalsIgnoreCase("True")) {
-			//6. Click on the Dropdown icon and Select Subscribe
-			List<WebElement> tdElements = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td"));
-			driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td["+(tdElements.size())+"]//button")).click();
-			driver.findElement(By.xpath("//a[@role='menuitem']/span[text()='Subscribe']")).click();
-			
-			//7. Select frequency as 'Daily' and Click on Save in the Edit Subscription popup window. 
-			driver.findElement(By.xpath("//input[@id='daily']/following-sibling::span")).click();
-			driver.findElement(By.xpath("//button[@title='Save']")).click();
-			actualText=driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
-			
-			//8.Verify Whether the dashboard is subscribed.
-			Assert.assertEquals(actualText,"You started a dashboard subscription.");
-			Assert.assertEquals(driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr[1]/td[5]//span[@class='slds-assistive-text']")).getText(), "True");
-			
+		WebElement scrollbar = driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
+//		 js.executeScript("window.scrollBy(300,300)",""); 
+		
+		scrollbar.click();
+		for(int i=0;i<3;i++ ) {
+			scrollbar.sendKeys(Keys.PAGE_DOWN);
+			Thread.sleep(1000);
 		}
-		else {
-			System.out.println("Selected Dashboard already Subscribed...");
+		
+		List<WebElement> noOfRows = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr"));
+		for(int i=1;i<=noOfRows.size();i++) {
+			expectedList.add(driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a")).getText().trim());
 		}
+		Collections.sort(expectedList,String.CASE_INSENSITIVE_ORDER);
+		
+		//5. Click the sort arrow in the Dashboard Name.
+		driver.findElement(By.xpath("//span[@title='Dashboard Name']")).click();
+		
+		//6. Verify the Dashboard displayed in ascending order by Dashboard name.
+		scrollbar = driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
+		scrollbar.click();
+		for(int i=0;i<3;i++ ) {
+			scrollbar.sendKeys(Keys.PAGE_DOWN);
+			Thread.sleep(1000);
+		}
+		noOfRows = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr"));
+		for(int i=1;i<=noOfRows.size();i++) {
+			actualList.add(driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a")).getText().trim());
+		}
+		System.out.println(expectedList.equals(actualList));
+		Assert.assertEquals(actualList, expectedList);
+		
 		//Close the driver
 		driver.quit();		
-		
-
-
 	}
 
 }
