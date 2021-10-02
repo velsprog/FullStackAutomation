@@ -1,4 +1,4 @@
-package selenium.week1;
+package selenium.week1.S014;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -26,6 +26,8 @@ public class S0141_VerifyDashboardssortorderbyDashboardname {
 	static JavascriptExecutor js;
 	static List<String> expectedList;
 	static List<String> actualList;
+	static int noOfRows;
+	static WebElement rowDesc; 
 	
 
 	public static void main(String[] args) throws IOException, InterruptedException {
@@ -63,6 +65,7 @@ public class S0141_VerifyDashboardssortorderbyDashboardname {
 
 		// 2. Click on the toggle menu button from the left corner
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='slds-icon-waffle']")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
 
 		// 3. Click View All and click Dashboards from App Launcher
@@ -74,34 +77,34 @@ public class S0141_VerifyDashboardssortorderbyDashboardname {
 		// 4. Click on the Dashboards tab
 		WebElement dashboardtabElement = driver.findElement(By.xpath("//a[@title='Dashboards']/span"));
 		js.executeScript("arguments[0].click();", dashboardtabElement);
-		WebElement scrollbar = driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
-//		 js.executeScript("window.scrollBy(300,300)",""); 
 		
-		scrollbar.click();
-		for(int i=0;i<3;i++ ) {
-			scrollbar.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(1000);
-		}
-		
-		List<WebElement> noOfRows = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr"));
-		for(int i=1;i<=noOfRows.size();i++) {
-			expectedList.add(driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a")).getText().trim());
+		//Thread.sleep(2000);
+		WebElement noOfItems = driver.findElement(By.xpath("//div[@class='test-listViewStatusInfo']/span"));
+		wait.until(ExpectedConditions.textToBePresentInElement(noOfItems, "item"));
+		noOfRows=Integer.parseInt(noOfItems.getText().split(" ")[0]);		
+		for(int i=1;i<=noOfRows;i++) {
+			rowDesc=driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a"));
+			js.executeScript("arguments[0].scrollIntoView();",rowDesc);
+			expectedList.add(rowDesc.getText().trim());
+			if(i==noOfRows) {
+				noOfRows=Integer.parseInt(driver.findElement(By.xpath("//div[@class='test-listViewStatusInfo']/span")).getText().split(" ")[0]);
+			}
 		}
 		Collections.sort(expectedList,String.CASE_INSENSITIVE_ORDER);
 		
 		//5. Click the sort arrow in the Dashboard Name.
+		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//span[@title='Dashboard Name']")));
 		driver.findElement(By.xpath("//span[@title='Dashboard Name']")).click();
 		
 		//6. Verify the Dashboard displayed in ascending order by Dashboard name.
-		scrollbar = driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
-		scrollbar.click();
-		for(int i=0;i<3;i++ ) {
-			scrollbar.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(1000);
-		}
-		noOfRows = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr"));
-		for(int i=1;i<=noOfRows.size();i++) {
-			actualList.add(driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a")).getText().trim());
+		noOfRows=Integer.parseInt(driver.findElement(By.xpath("//div[@class='test-listViewStatusInfo']/span")).getText().split(" ")[0]);
+		for(int i=1;i<=noOfRows;i++) {
+			rowDesc=driver.findElement(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a"));
+			js.executeScript("arguments[0].scrollIntoView();",rowDesc);
+			actualList.add(rowDesc.getText().trim());
+			if(i==noOfRows) {
+				noOfRows=Integer.parseInt(driver.findElement(By.xpath("//div[@class='test-listViewStatusInfo']/span")).getText().split(" ")[0]);
+			}
 		}
 		System.out.println(expectedList.equals(actualList));
 		Assert.assertEquals(actualList, expectedList);
@@ -111,3 +114,40 @@ public class S0141_VerifyDashboardssortorderbyDashboardname {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * WebElement scrollbar =
+ * driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
+ * //js.executeScript("window.scrollBy(300,300)","");
+ * 
+ * scrollbar.click(); for(int i=0;i<3;i++ ) {
+ * scrollbar.sendKeys(Keys.PAGE_DOWN); Thread.sleep(1000); }
+ * List<WebElement> noOfRows = driver.findElements(By.xpath("//table[contains(@class,'slds-table_edit')]/tbody/tr"));
+ */
+
+
+//6. Verify the Dashboard displayed in ascending order by Dashboard name.
+/*
+ * scrollbar =
+ * driver.findElement(By.xpath("//div[@class='slds-scrollable_y']"));
+ * scrollbar.click(); for(int i=0;i<3;i++ ) {
+ * scrollbar.sendKeys(Keys.PAGE_DOWN); Thread.sleep(1000); } noOfRows =
+ * driver.findElements(By.xpath(
+ * "//table[contains(@class,'slds-table_edit')]/tbody/tr")); for(int
+ * i=1;i<=noOfRows.size();i++) { actualList.add(driver.findElement(By.xpath(
+ * "//table[contains(@class,'slds-table_edit')]/tbody/tr["+i+"]/th//a")).getText
+ * ().trim()); }
+ */
