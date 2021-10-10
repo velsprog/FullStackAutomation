@@ -3,20 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
   <test thread-count="5" name="Test(failed)" verbose="5">
     <classes>
-      <class name="selenium.testNG.WorkType.S01963_EditWorkType">
+      <class name="selenium.testNG.WorkType.S01962_EditWorkTypeNegative">
         <methods>
           <include name="init"/>
           <include name="tearDown"/>
-          <include name="EditWorkType"/>
+          <include name="EditWorkTypeNegative"/>
         </methods>
-      </class> <!-- selenium.testNG.WorkType.S01963_EditWorkType -->
-      <class name="selenium.testNG.WorkType.S01964_DeleteWorkType">
-        <methods>
-          <include name="DeleteWorkType"/>
-          <include name="init"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- selenium.testNG.WorkType.S01964_DeleteWorkType -->
+      </class> <!-- selenium.testNG.WorkType.S01962_EditWorkTypeNegative -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

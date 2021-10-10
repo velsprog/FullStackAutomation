@@ -20,12 +20,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	
-	public static ChromeOptions option;
-	public static ChromeDriver driver;
-	public static WebDriverWait wait;
-	public static JavascriptExecutor js;
+	//public ChromeOptions option;
+	public ChromeDriver driver;
+	public WebDriverWait wait;
+	public JavascriptExecutor js;
 	
-	@BeforeClass
+	@BeforeMethod
 	public void init() {
 		
 
@@ -41,15 +41,13 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 
 			// ChromeOption Setup
-			option = new ChromeOptions();
+			ChromeOptions option = new ChromeOptions();
 			option.addArguments("--disable-notifications");
 			
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			/*
+			 * try { Thread.sleep(3000); } catch (InterruptedException e) { // TODO
+			 * Auto-generated catch block e.printStackTrace(); }
+			 */
 
 			// Create Chrome Driver Object
 			driver = new ChromeDriver(option);
@@ -78,7 +76,7 @@ public class BaseClass {
 			
 	}
 	
-	@AfterClass
+	@AfterMethod
 	public void tearDown() {
 		
 		System.out.println("Invoke After Method");
