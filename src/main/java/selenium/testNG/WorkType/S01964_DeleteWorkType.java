@@ -20,11 +20,11 @@ import selenium.testNG.Base.BaseClass;
 
 public class S01964_DeleteWorkType extends BaseClass{
 
-	static int lastColNum;
-	static String Message;
-	static String workTypeName;
+	int lastColNum;
+	String Message;
+	String workTypeName;
 	
-	@Test
+	@Test(dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative","selenium.testNG.WorkType.S01963_EditWorkType.EditWorkType"})
 	public void DeleteWorkType() {
 	
 			

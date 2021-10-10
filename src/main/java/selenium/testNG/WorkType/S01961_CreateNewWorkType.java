@@ -13,26 +13,40 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import selenium.testNG.Base.BaseClass;
+import selenium.utility.Util;
 
 public class S01961_CreateNewWorkType extends BaseClass {
 
-	static String workTypeName="Salesforce Project";
-	static String description="Specimen";
-	static String operatingHours="UK Shift";
-	static String duration="7";
-	static String actualText;
+	/*
+	 * static String workTypeName="Salesforce Project"; 
+	 * static String description="Specimen"; 
+	 * static String operatingHours="UK Shift"; 
+	 * static String duration="7";
+	 */
+	String actualText;
 	
-	@Test
-	public void CreateNewWorkType() {
+	@BeforeClass
+	public void getData( ) {
+		
+		fileName="TestData";
+		sheetName="CreateNewWorkType";
+		
+	}
+	
+	@Test(dataProvider = "data")
+	public void CreateNewWorkType(String workTypeName,String description,String operatingHours,String duration) {
 		try {
 			//4) Click on the App Laucher Icon left to Setup
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='slds-icon-waffle']")));
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+			driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();	
 
 			//5) Click on View All
 			driver.findElement(By.xpath("//button[text()='View All']")).click();
@@ -63,7 +77,9 @@ public class S01961_CreateNewWorkType extends BaseClass {
 			driver.findElement(By.xpath("//span[text()='Estimated Duration']/parent::label//following-sibling::input[contains(@class,'uiInputSmartNumber')]")).sendKeys(duration);
 			
 			//12 Click on Save
-			driver.findElement(By.xpath("//div[contains(@class,'inlineFooter')]//button[@title='Save']")).click();
+			wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//span[text()='Estimated Duration']/parent::label//following-sibling::input[contains(@class,'uiInputSmartNumber')]")), duration+"0"));
+			Thread.sleep(500);
+			js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//div[contains(@class,'inlineFooter')]//button[@title='Save']")));
 			
 			//13 Verify the Created message 
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Work Type')]"), "Work Type"));
@@ -73,5 +89,5 @@ public class S01961_CreateNewWorkType extends BaseClass {
 			e.printStackTrace();
 		}
 
-	}
+	}	
 }

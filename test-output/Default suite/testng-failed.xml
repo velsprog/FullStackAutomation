@@ -7,6 +7,7 @@
         <methods>
           <include name="init"/>
           <include name="CreateNewWorkType"/>
+          <include name="getData"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- selenium.testNG.WorkType.S01961_CreateNewWorkType -->

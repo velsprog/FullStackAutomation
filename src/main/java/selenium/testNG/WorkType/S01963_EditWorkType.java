@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,14 +22,23 @@ import selenium.testNG.Base.BaseClass;
 
 public class S01963_EditWorkType extends BaseClass{
 
-	static int lastColNum;
-	static String timeFrameEnd="18";
-	static String timeFrameStart="9";
-	static String successMessage;
-	static String workTypeName;
+	//static String timeFrameEnd="18";
+	//static String timeFrameStart="9";
 	
-	@Test
-	public void EditWorkType() {
+	int lastColNum;
+	String successMessage;
+	String workTypeName;
+	
+	@BeforeClass
+	public void getData( ) {
+		
+		fileName="TestData";
+		sheetName="EditWorkType";
+		
+	}
+	
+	@Test(dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative"}, dataProvider = "data")
+	public void EditWorkType(String timeFrameEnd, String timeFrameStart) {
 	
 			
 		try {
@@ -49,7 +60,7 @@ public class S01963_EditWorkType extends BaseClass{
 			Thread.sleep(1000);
 			lastColNum=driver.findElements(By.xpath("//table/tbody/tr[1]/td")).size();
 			workTypeName=driver.findElement(By.xpath("//table/tbody/tr[1]/th//a")).getText();
-			driver.findElement(By.xpath("//table/tbody/tr[1]/td["+lastColNum+"]//a")).click();
+			driver.findElement(By.xpath("//table/tbody/tr[4]/td["+lastColNum+"]//a")).click();
 			
 			//8) Click on Edit
 			driver.findElement(By.xpath("//a[@title='Edit']")).click();

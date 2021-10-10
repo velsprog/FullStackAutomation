@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -18,12 +20,20 @@ import selenium.testNG.Base.BaseClass;
 
 public class S01965_alertmessageforWorkType extends BaseClass{
 	
-	static String workTypeName="Bootcamp";
-	static String errMsgNotification;
-	static String alertMsg;
+	//static String workTypeName="Bootcamp";
+	String errMsgNotification;
+	String alertMsg;
+	
+	@BeforeClass
+	public void getData( ) {
+		
+		fileName="TestData";
+		sheetName="alertmessageforWorkType";
+		
+	}
 
-	@Test
-	public void alertmessageforWorkType() {
+	@Test(dataProvider = "data")
+	public void alertmessageforWorkType(String workTypeName) {
 		
 		try {
 			
@@ -63,5 +73,4 @@ public class S01965_alertmessageforWorkType extends BaseClass{
 			e.printStackTrace();
 		}
 	}
-
 }

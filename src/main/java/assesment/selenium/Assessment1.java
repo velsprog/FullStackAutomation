@@ -95,7 +95,8 @@ public class Assessment1 {
 				driver.findElement(By.xpath("//button[@title='Edit Goal']")).click();
 				driver.findElement(By.xpath("//span[@id='currencyCode']/following-sibling::input")).clear();
 				driver.findElement(By.xpath("//span[@id='currencyCode']/following-sibling::input")).sendKeys("10000");
-				driver.findElement(By.xpath("//span[contains(@class,'label bBody') and text()='Save']")).click();
+				WebElement save=driver.findElement(By.xpath("//span[contains(@class,'label bBody') and text()='Save']"));
+				js.executeScript("arguments[0].click();", save);
 			}
 			
 			//7. Select Dashboards from DropDown
@@ -118,16 +119,21 @@ public class Assessment1 {
 			driver.findElement(By.id("submitBtn")).click();
 			driver.switchTo().defaultContent();
 			
-			  try { 
-				  Thread.sleep(5000); 
-				  } catch (InterruptedException e) {
-			  e.printStackTrace(); 
-			  }
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			 
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Done']")));
-			driver.findElement(By.xpath("//button[text()='Done']")).click();
+			final WebElement done=driver.findElement(By.xpath("//button[text()='Done']"));
+			wait.until(ExpectedConditions.jsReturnsValue("return document.querySelector(\"#main > div > div.toolbar > div:nth-child(2) > div.toolbarActions > button\")"));
+			wait.until(ExpectedConditions.elementToBeClickable(done));
+			wait.until(d -> done.isEnabled());
+			js.executeScript("arguments[0].click();", done);
 			driver.switchTo().defaultContent();
+			
 			
 			//12. Verify the Dashboard is Created
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
@@ -189,6 +195,7 @@ public class Assessment1 {
 	}
 	public static void CloseTab() {
 		List<WebElement> listItem = driver.findElements(By.xpath("//ul[contains(@class,'tabBarItems slds-grid') and @role='presentation']/li[contains(@class,'oneConsoleTabItem')]//button[contains(@title,'Close')]"));
+		System.out.println(listItem.size());
 		if(listItem.size()>0) {
 			for (WebElement item : listItem) {
 				item.click();	
