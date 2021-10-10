@@ -2,6 +2,7 @@ package selenium.week1.S014;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import selenium.testNG.Base.BaseClass;
 
 public class S0138_CreateNewDashboard {
 	
@@ -68,14 +70,17 @@ public class S0138_CreateNewDashboard {
 			dashboardElement.click();
 			
 			//4. Click on the New Dashboard option
+			CloseTab();
 			driver.findElement(By.xpath("//a[@title='New Dashboard']/div")).click();
 			
 			//5. Enter Name as 'Salesforce Automation by Your Name ' and Click on Create.
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
 			driver.findElement(By.xpath("//input[@id='dashboardNameInput']")).sendKeys(dashboardName);
 			driver.findElement(By.id("submitBtn")).click();
+			driver.switchTo().defaultContent();
 			
 			//6.Click on Save and Verify Dashboard name.
+			Thread.sleep(5000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
 			driver.findElement(By.xpath("//div[@class='actionRibbon']//button")).click();
 			driver.findElement(By.xpath("//div[@class='actionRibbon']/following::button")).click();
@@ -93,7 +98,14 @@ public class S0138_CreateNewDashboard {
 		}
 		finally {
 			//Close the driver
-			driver.quit();
+			//driver.quit();
+		}
+	}
+	
+	public static void CloseTab() {
+		List<WebElement> listItem = driver.findElements(By.xpath("//ul[contains(@class,'tabBarItems slds-grid') and @role='presentation']/li[contains(@class,'oneConsoleTabItem')]//button[contains(@title,'Close')]"));
+		for (WebElement item : listItem) {
+			item.click();	
 		}
 	}
 

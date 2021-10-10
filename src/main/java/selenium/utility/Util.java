@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class Util {
 	
@@ -18,5 +20,4 @@ public class Util {
 
 		return (winList.get(winList.size()-1));
 	}
-
 }

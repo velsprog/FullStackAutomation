@@ -22,7 +22,7 @@ public class S0139_EditDashboard {
 	static ChromeDriver driver;
 	static WebDriverWait wait;
 	static JavascriptExecutor js;
-	static String dashboardName = "Velmurugan";
+	static String dashboardName = "Salesforce Automation by Vels";
 	static String description = "SalesForce";
 	static String actualText;
 
