@@ -55,6 +55,7 @@ public class Util {
 					}
 				}
 			}	
+			wb.close();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

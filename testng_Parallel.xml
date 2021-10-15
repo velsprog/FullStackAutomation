@@ -8,14 +8,14 @@
 		<parameter name="Browser" value="Chrome"/>
 		<classes>
 			<class name="selenium.testNG.WorkType.S01961_CreateNewWorkType" />
-<!-- 			<class name="selenium.testNG.WorkType.S01962_EditWorkTypeNegative" />
+			<class name="selenium.testNG.WorkType.S01962_EditWorkTypeNegative" />
 			<class name="selenium.testNG.WorkType.S01963_EditWorkType" />
 			<class name="selenium.testNG.WorkType.S01964_DeleteWorkType" />
-			<class name="selenium.testNG.WorkType.S01965_alertmessageforWorkType" /> -->
+			<class name="selenium.testNG.WorkType.S01965_alertmessageforWorkType" />
 		</classes>
 	</test>
 	
-<!-- 		<test name="FirefoxTest">
+		<test name="FirefoxTest">
 				<parameter name="Browser" value="Firefox"/>
 		<classes>
 			<class name="selenium.testNG.WorkType.S01961_CreateNewWorkType" />
@@ -24,5 +24,5 @@
 			<class name="selenium.testNG.WorkType.S01964_DeleteWorkType" />
 			<class name="selenium.testNG.WorkType.S01965_alertmessageforWorkType" />
 		</classes>
-	</test> -->
+	</test>
 </suite> <!-- Suite -->

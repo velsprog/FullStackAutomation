@@ -17,4 +17,17 @@
       </class> <!-- selenium.testNG.WorkType.S01961_CreateNewWorkType -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)" verbose="10">
+    <parameter name="Browser" value="Firefox"/>
+    <classes>
+      <class name="selenium.testNG.WorkType.S01961_CreateNewWorkType">
+        <methods>
+          <include name="init"/>
+          <include name="CreateNewWorkType" invocation-numbers="0"/>
+          <include name="getData"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- selenium.testNG.WorkType.S01961_CreateNewWorkType -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

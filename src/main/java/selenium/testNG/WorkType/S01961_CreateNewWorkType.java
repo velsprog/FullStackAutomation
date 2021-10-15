@@ -77,8 +77,8 @@ public class S01961_CreateNewWorkType extends BaseClass {
 			driver.findElement(By.xpath("//span[text()='Estimated Duration']/parent::label//following-sibling::input[contains(@class,'uiInputSmartNumber')]")).sendKeys(duration);
 			
 			//12 Click on Save
-			wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//span[text()='Estimated Duration']/parent::label//following-sibling::input[contains(@class,'uiInputSmartNumber')]")), duration+"0"));
-			Thread.sleep(500);
+			//wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//span[text()='Estimated Duration']/parent::label//following-sibling::input[contains(@class,'uiInputSmartNumber')]")), duration+"0"));
+			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//div[contains(@class,'inlineFooter')]//button[@title='Save']")));
 			
 			//13 Verify the Created message 
