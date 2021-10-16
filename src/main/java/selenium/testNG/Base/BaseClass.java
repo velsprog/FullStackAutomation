@@ -5,6 +5,7 @@ import java.net.SocketException;
 import java.time.Duration;
 import java.util.List;
 
+import org.checkerframework.checker.guieffect.qual.AlwaysSafe;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +35,7 @@ public class BaseClass {
 	public String sheetName;
 	
 	@Parameters({"URL","LoginID","Password","Browser"})
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void init(String URL,String LoginID,String Password,String Browser) {
 		
 
@@ -90,27 +91,30 @@ public class BaseClass {
 			
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-		
-		System.out.println("Invoke After Method");
 		try {
+			System.out.println("Invoke After Method");
 			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@title='User']/parent::span")));
+			js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//img[@title='User']/parent::span")));
+			driver.findElement(By.xpath("//a[text()='Log Out']")).click();
+		//driver.close();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			driver.quit();
 		}
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@title='User']/parent::span")));
-		js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//img[@title='User']/parent::span")));
-		driver.findElement(By.xpath("//a[text()='Log Out']")).click();
-		//driver.close();
-		driver.quit();
 	}
 	
 	@DataProvider(name = "data")
 	public String[][] testData() {
 		return new Util().readExcel(fileName,sheetName);		
 	}
+	
 	
 
 }

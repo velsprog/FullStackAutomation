@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -26,6 +28,8 @@ public class S011072_DownloadPDF {
 	static ChromeDriver driver;
 	static WebDriverWait wait;
 	static JavascriptExecutor js;
+	static Map<String,Object> prefs;
+	public static String downloadPath="C:\\Users\\velsp\\eclipse-workspace\\FullStackAutomationPgm\\downloadPDF";
 	
 	public static void main(String[] args) {
 
@@ -39,7 +43,12 @@ public class S011072_DownloadPDF {
 			// ChromeOption Setup
 			option = new ChromeOptions();
 			option.addArguments("--disable-notifications");
-
+			prefs = new LinkedHashMap<String,Object>();
+			prefs.put("download.prompt_for_download", false);
+			prefs.put("download.default_directory", downloadPath);
+			prefs.put("plugins.always_open_pdf_externally", true);
+			option.setExperimentalOption("prefs", prefs);
+			
 			// Create Chrome Driver Object
 			driver = new ChromeDriver(option);
 
@@ -88,8 +97,12 @@ public class S011072_DownloadPDF {
 			driver.findElement(By.xpath("//button[@title='Open PDF']")).click();
 			
 			//9) Verify the downloaded release notes pdf 
-			driver.switchTo().window(Util.getLastWindow(driver));
-			
+			while (Util.getDownloadedFileName().contains("crdownload")) {
+				Thread.sleep(50);
+				Util.getDownloadedFileName();
+			}
+			Assert.assertEquals(Util.getDownloadedFileName(), "salesforce_summer20_release_notes.pdf");
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {

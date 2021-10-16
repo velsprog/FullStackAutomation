@@ -29,7 +29,7 @@ public class S01963_EditWorkType extends BaseClass{
 	String successMessage;
 	String workTypeName;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void getData( ) {
 		
 		fileName="TestData";
@@ -37,7 +37,7 @@ public class S01963_EditWorkType extends BaseClass{
 		
 	}
 	
-	@Test(dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative"}, dataProvider = "data")
+	@Test(alwaysRun = true,dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative"}, dataProvider = "data", groups = {"Regression"})
 	public void EditWorkType(String timeFrameEnd, String timeFrameStart) {
 	
 			

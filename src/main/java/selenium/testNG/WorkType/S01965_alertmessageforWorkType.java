@@ -24,7 +24,7 @@ public class S01965_alertmessageforWorkType extends BaseClass{
 	String errMsgNotification;
 	String alertMsg;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void getData( ) {
 		
 		fileName="TestData";
@@ -32,7 +32,7 @@ public class S01965_alertmessageforWorkType extends BaseClass{
 		
 	}
 
-	@Test(dataProvider = "data")
+	@Test(dataProvider = "data", enabled = true,groups = {"Functional"})
 	public void alertmessageforWorkType(String workTypeName) {
 		
 		try {

@@ -24,7 +24,8 @@ public class S01964_DeleteWorkType extends BaseClass{
 	String Message;
 	String workTypeName;
 	
-	@Test(dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative","selenium.testNG.WorkType.S01963_EditWorkType.EditWorkType"})
+	//@Test(invocationCount = 3,dependsOnMethods = {"selenium.testNG.WorkType.S01962_EditWorkTypeNegative.EditWorkTypeNegative","selenium.testNG.WorkType.S01963_EditWorkType.EditWorkType"})
+	@Test(invocationCount = 3, dependsOnGroups = {"Regression"},groups = {"smoke","Functional"})
 	public void DeleteWorkType() {
 	
 			

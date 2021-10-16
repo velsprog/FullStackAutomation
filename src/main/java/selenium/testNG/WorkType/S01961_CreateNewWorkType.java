@@ -32,7 +32,7 @@ public class S01961_CreateNewWorkType extends BaseClass {
 	 */
 	String actualText;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void getData( ) {
 		
 		fileName="TestData";
@@ -40,7 +40,7 @@ public class S01961_CreateNewWorkType extends BaseClass {
 		
 	}
 	
-	@Test(dataProvider = "data")
+	@Test(dataProvider = "data", groups = {"smoke"})
 	public void CreateNewWorkType(String workTypeName,String description,String operatingHours,String duration) {
 		try {
 			//4) Click on the App Laucher Icon left to Setup

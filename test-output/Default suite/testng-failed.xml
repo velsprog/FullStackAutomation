@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.testNG.WorkType.S01961_CreateNewWorkType">
+      <class name="selenium.week2.S0110.S011073_Certificationssortorder">
         <methods>
+          <include name="certificationSortingCheck"/>
           <include name="init"/>
-          <include name="CreateNewWorkType"/>
-          <include name="getData"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- selenium.testNG.WorkType.S01961_CreateNewWorkType -->
+      </class> <!-- selenium.week2.S0110.S011073_Certificationssortorder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

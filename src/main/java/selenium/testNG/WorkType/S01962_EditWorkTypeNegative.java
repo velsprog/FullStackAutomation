@@ -30,7 +30,7 @@ public class S01962_EditWorkTypeNegative extends BaseClass{
 	String timeFrameStartErrMsg;
 	String timeFrameEndErrMsg;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void getData( ) {
 		
 		fileName="TestData";
@@ -38,7 +38,7 @@ public class S01962_EditWorkTypeNegative extends BaseClass{
 		
 	}
 	
-	@Test(dataProvider = "data")
+	@Test(dataProvider = "data", groups = {"Regression"})
 	public void EditWorkTypeNegative(String timeFrameEnd, String timeFrameStart) {
 	
 			
@@ -58,7 +58,7 @@ public class S01962_EditWorkTypeNegative extends BaseClass{
 			worktypeElement.click();
 			
 			//7) Click on the Arrow button at the end of the first result
-			Thread.sleep(500);
+			//Thread.sleep(500);
 			lastColNum=driver.findElements(By.xpath("//table/tbody/tr[1]/td")).size();
 			driver.findElement(By.xpath("//table/tbody/tr[4]/td["+lastColNum+"]//a")).click();
 			

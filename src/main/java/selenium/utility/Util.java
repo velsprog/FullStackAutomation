@@ -16,6 +16,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import selenium.week2.S0110.S011072_DownloadPDF;
+
 public class Util {
 	
 	static List<String> winList;
@@ -27,11 +29,18 @@ public class Util {
 	FileInputStream fs;
 	int lastRowNum,lastColNum;
 	
+	public static String getDownloadedFileName() {
+		
+		File file = new File(S011072_DownloadPDF.downloadPath);
+		String[] fileList = file.list();
+		return fileList[0];
+	}
+	
 	public static String getLastWindow(WebDriver driver) {
 		windows=driver.getWindowHandles();
 		winList= new ArrayList<String>();
 		winList.addAll(windows);
-
+		System.out.println(winList.size());
 		return (winList.get(winList.size()-1));
 	}
 	
