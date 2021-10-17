@@ -3,11 +3,13 @@ package selenium.utility;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,7 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import selenium.week2.S0110.S011072_DownloadPDF;
+import selenium.S0110.S011072_DownloadPDF;
 
 public class Util {
 	
@@ -27,6 +29,7 @@ public class Util {
 	XSSFSheet sheet;
 	XSSFRow row;
 	FileInputStream fs;
+	FileOutputStream fos;
 	int lastRowNum,lastColNum;
 	
 	public static String getDownloadedFileName() {
@@ -72,5 +75,35 @@ public class Util {
 			e.printStackTrace();
 		}
 		return data;
+	}
+	
+	public void writeExcel(String fileName, String sheetName,String caseID,int row,int col) {
+		
+		try {
+			fs = new FileInputStream(new File(".\\TestData\\"+fileName+".xlsx"));
+			wb = new XSSFWorkbook(fs);
+			sheet=wb.getSheet(sheetName);
+			if(sheet.getRow(row)==null)
+			{
+				sheet.createRow(row).createCell(col).setCellValue(caseID);
+			} else if(sheet.getRow(row).getCell(col)==null) {
+				sheet.getRow(row).createCell(col).setCellValue(caseID);
+			}
+			else {
+				sheet.getRow(row).getCell(col).setCellValue(caseID);
+			}
+			fos = new FileOutputStream(new File(".\\TestData\\"+fileName+".xlsx"));
+			wb.write(fos);
+			fos.close();
+			fs.close();
+			wb.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

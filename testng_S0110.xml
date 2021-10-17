@@ -10,9 +10,9 @@
 	<test thread-count="5" name="Test">
 		<parameter name="Browser" value="Chrome" />
 		<classes>
-			<!-- <class name="selenium.week2.S0110.S011073_Certificationssortorder" /> -->
-			<!-- <class name="selenium.week2.S0110.S011074_NonProfitCertifications"/> -->
-			<class name="selenium.week2.S0110.S011075_ServicesSortorder"/>
+			<!-- <class name="selenium.S0110.S011073_Certificationssortorder" /> -->
+			<!-- <class name="selenium.S0110.S011074_NonProfitCertifications"/> -->
+			<class name="selenium.S0110.S011075_ServicesSortorder"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

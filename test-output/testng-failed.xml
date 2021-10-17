@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
+<suite thread-count="2" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
   <parameter name="LoginID" value="fullstack@testleaf.com"/>
   <parameter name="URL" value="https://www.salesforce.com/"/>
   <parameter name="Password" value="SelBootcamp$123"/>
   <listeners>
     <listener class-name="selenium.utility.IAnnotationListener"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)" verbose="5">
+  <test thread-count="2" name="Test(failed)" verbose="5">
     <parameter name="Browser" value="Chrome"/>
     <classes>
-      <class name="selenium.week2.S0110.S011074_NonProfitCertifications">
+      <class name="selenium.S017.S0155_DeleteCase">
         <methods>
-          <include name="NonProfitCertCheck"/>
+          <include name="deleteCase"/>
           <include name="init"/>
+          <include name="gotoCaseTab"/>
+          <include name="getData"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- selenium.week2.S0110.S011074_NonProfitCertifications -->
+      </class> <!-- selenium.S017.S0155_DeleteCase -->
+      <class name="selenium.S017.S0156_CreateCasewithoutmandatoryfields">
+        <methods>
+          <include name="init"/>
+          <include name="gotoCaseTab"/>
+          <include name="getData"/>
+          <include name="tearDown"/>
+          <include name="newCaseCreationNegative" invocation-numbers="0 0"/>
+        </methods>
+      </class> <!-- selenium.S017.S0156_CreateCasewithoutmandatoryfields -->
+      <class name="selenium.S017.S0153_CreateNewCase">
+        <methods>
+          <include name="newCaseCreation"/>
+          <include name="init"/>
+          <include name="tearDown"/>
+          <include name="getData"/>
+          <include name="gotoCaseTab"/>
+        </methods>
+      </class> <!-- selenium.S017.S0153_CreateNewCase -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
