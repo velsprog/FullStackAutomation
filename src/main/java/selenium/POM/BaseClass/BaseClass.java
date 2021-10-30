@@ -3,6 +3,7 @@ package selenium.POM.BaseClass;
 import java.io.IOException;
 import java.net.SocketException;
 import java.time.Duration;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.checkerframework.checker.guieffect.qual.AlwaysSafe;
@@ -20,6 +21,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
@@ -33,12 +35,22 @@ public class BaseClass {
 	public JavascriptExecutor js;
 	public String fileName;
 	public String sheetName;
+	public String Browser;
+	public static List<String> caseID_Chrome;
+	public static List<String> caseID_Firefox;
 	
-	@Parameters({"URL","LoginID","Password","Browser"})
+	@Parameters({"Browser"})
+	@BeforeClass(alwaysRun = true)
+	public void browserIntialization(String Browser) {
+		this.Browser=Browser;
+		caseID_Chrome = new LinkedList<>();
+		caseID_Firefox = new LinkedList<>();
+	}
+	
+	@Parameters({"URL"})
 	@BeforeMethod(alwaysRun = true)
-	public void init(String URL,String LoginID,String Password,String Browser) {
+	public void init(String URL) {
 		
-
 		System.out.println("Invoke Before Method");
 		
 			// Webdriver Setup
@@ -101,7 +113,7 @@ public class BaseClass {
 	
 	@DataProvider(name = "data")
 	public String[][] testData() {
-		return new Util().readExcel(fileName,sheetName);		
+		return new Util().readExcel(fileName,sheetName,Browser);		
 	}
 	
 	

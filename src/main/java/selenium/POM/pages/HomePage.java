@@ -1,15 +1,22 @@
 package selenium.POM.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import selenium.POM.BaseClass.BaseClass;
 
 public class HomePage extends BaseClass {
 	
-	public HomePage(WebDriver driver) {
+	public HomePage(WebDriver driver, WebDriverWait wait, JavascriptExecutor js,String Browser) {
 		this.driver=driver;
+		this.wait=wait;
+		this.js=js;
+		this.Browser=Browser;
+		System.out.println(Browser);
+		System.out.println("This. : "+this.Browser);
 	}
 	
 	public HomePage clickToggleMenu() throws InterruptedException {
@@ -20,6 +27,7 @@ public class HomePage extends BaseClass {
 		
 	}
 	public HomePage clickViewAll() {
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//button[text()='View All']")));
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		return this;
 	}
@@ -29,7 +37,7 @@ public class HomePage extends BaseClass {
 	}
 	public SalesPage clickSales() {
 		driver.findElement(By.xpath("//div[@class='slds-truncate']//p[contains(text(),'Manage your sales')]")).click();
-		return new SalesPage(driver);
+		return new SalesPage(driver,wait,js,Browser);
 	}
 	
 

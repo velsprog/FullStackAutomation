@@ -33,12 +33,20 @@ public class BaseClass {
 	public JavascriptExecutor js;
 	public String fileName;
 	public String sheetName;
+	public String Browser;
 	
-	@Parameters({"URL","LoginID","Password","Browser"})
+	@Parameters({"Browser"})
+	@BeforeClass(alwaysRun = true)
+	public void browserIntialization(String Browser) {
+		this.Browser=Browser;
+	}
+	
+	@Parameters({"URL","LoginID","Password"})
 	@BeforeMethod(alwaysRun = true)
-	public void init(String URL,String LoginID,String Password,String Browser) {
+	public void init(String URL,String LoginID,String Password) {
 		
 
+		this.Browser=Browser;
 		System.out.println("Invoke Before Method");
 		
 			// Webdriver Setup
@@ -112,7 +120,7 @@ public class BaseClass {
 	
 	@DataProvider(name = "data")
 	public String[][] testData() {
-		return new Util().readExcel(fileName,sheetName);		
+		return new Util().readExcel(fileName,sheetName,Browser);		
 	}
 	
 	

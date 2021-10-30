@@ -13,7 +13,7 @@ import selenium.utility.Util;
 public class S0153_CreateNewCase extends BaseClass{
  
 	public static String caseID;
-	public static int row=0,col=0;
+	public int rowNum=0;
 	
 	@BeforeClass(alwaysRun = true)
 	public void getData( ) {
@@ -93,10 +93,9 @@ public class S0153_CreateNewCase extends BaseClass{
 		
 		caseID = driver.findElement(By.xpath("//p[@title='Case Number']/following-sibling::p//lightning-formatted-text")).getText();
 		
-		Assert.assertEquals(actualToastMsg,"Case \""+caseID+"\" was created.");
-		row=row+1;
-		System.out.println(row);
-		new Util().writeExcel("S0154_EditCase", sheetName, caseID,row,col);
-		new Util().writeExcel("S0155_DeleteCase", sheetName, caseID,row,col);
+		Assert.assertEquals(actualToastMsg,"Case \""+caseID+"\" was created.");	
+		rowNum=rowNum+1;
+		//new Util().writeExcel("S0154_EditCase", sheetName, caseID,"caseID",Browser,rowNum);
+		//new Util().writeExcel("S0155_DeleteCase", sheetName, caseID,"caseID",Browser,rowNum);
 	}
 }

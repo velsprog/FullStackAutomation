@@ -1,715 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-17T19:30:11 IST" name="Suite" finished-at="2021-10-17T19:36:10 IST" duration-ms="358276">
+  <suite started-at="2021-10-30T11:07:22 IST" name="Suite" finished-at="2021-10-30T11:10:03 IST" duration-ms="161081">
     <groups>
     </groups>
-    <test started-at="2021-10-17T19:30:11 IST" name="Test" finished-at="2021-10-17T19:36:10 IST" duration-ms="358276">
-      <class name="selenium.S017.S0153_CreateNewCase">
-        <test-method is-config="true" signature="getData()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:11 IST" name="getData" finished-at="2021-10-17T19:30:11 IST" duration-ms="15" status="PASS">
+    <test started-at="2021-10-30T11:07:22 IST" name="Chrome Test" finished-at="2021-10-30T11:09:48 IST" duration-ms="145425">
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount">
+        <test-method is-config="true" signature="browserIntialization(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:07:22 IST" name="browserIntialization" finished-at="2021-10-30T11:07:22 IST" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserIntialization -->
+        <test-method is-config="true" signature="getData(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:07:22 IST" name="getData" finished-at="2021-10-30T11:07:22 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[fullstack@testleaf.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SelBootcamp$123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:12 IST" name="init" finished-at="2021-10-17T19:30:23 IST" duration-ms="10522" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:07:23 IST" name="init" finished-at="2021-10-30T11:07:37 IST" duration-ms="13699" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:23 IST" name="gotoCaseTab" finished-at="2021-10-17T19:30:36 IST" duration-ms="12627" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="newCaseCreation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:36 IST" name="newCaseCreation" data-provider="data" finished-at="2021-10-17T19:30:46 IST" duration-ms="10868" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:07:37 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:08:07 IST" duration-ms="29719" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Mr.]]>
+                <![CDATA[David William]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Velmurugan]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Subramanian]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Email]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Escalated]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Testing]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Dummy]]>
+                <![CDATA[Public]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newCaseCreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:46 IST" name="tearDown" finished-at="2021-10-17T19:30:48 IST" duration-ms="1767" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:08:07 IST" name="tearDown" finished-at="2021-10-30T11:08:11 IST" duration-ms="4205" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:48 IST" name="init" finished-at="2021-10-17T19:30:59 IST" duration-ms="10605" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:08:11 IST" name="init" finished-at="2021-10-30T11:08:19 IST" duration-ms="8142" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:30:59 IST" name="gotoCaseTab" finished-at="2021-10-17T19:31:09 IST" duration-ms="10229" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="newCaseCreation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:09 IST" name="newCaseCreation" data-provider="data" finished-at="2021-10-17T19:31:22 IST" duration-ms="12890" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:08:19 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:08:50 IST" duration-ms="30688" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Dr.]]>
+                <![CDATA[Frank Jones]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Rajesh]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Kumar]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Email]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Escalated]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Dev]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Dummy]]>
+                <![CDATA[Private]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newCaseCreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:22 IST" name="tearDown" finished-at="2021-10-17T19:31:24 IST" duration-ms="1784" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:08:50 IST" name="tearDown" finished-at="2021-10-30T11:08:55 IST" duration-ms="5288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:24 IST" name="init" finished-at="2021-10-17T19:31:33 IST" duration-ms="9277" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:08:55 IST" name="init" finished-at="2021-10-30T11:09:08 IST" duration-ms="12838" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:33 IST" name="gotoCaseTab" finished-at="2021-10-17T19:31:43 IST" duration-ms="9772" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="newCaseCreation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:43 IST" name="newCaseCreation" data-provider="data" finished-at="2021-10-17T19:31:52 IST" duration-ms="9675" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:09:08 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:09:43 IST" duration-ms="34914" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Mrs.]]>
+                <![CDATA[Chris Kong]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Sayoni]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Dave]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Web]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[On Hold]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Dev]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Dummy]]>
+                <![CDATA[Subsidiary]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newCaseCreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0153_CreateNewCase@28261e8e]" started-at="2021-10-17T19:31:52 IST" name="tearDown" finished-at="2021-10-17T19:31:54 IST" duration-ms="1819" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@5386659f]" started-at="2021-10-30T11:09:43 IST" name="tearDown" finished-at="2021-10-30T11:09:48 IST" duration-ms="4604" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- selenium.S017.S0153_CreateNewCase -->
-      <class name="selenium.S017.S0156_CreateCasewithoutmandatoryfields">
-        <test-method is-config="true" signature="getData()[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:34:50 IST" name="getData" finished-at="2021-10-17T19:34:50 IST" duration-ms="0" status="PASS">
+      </class> <!-- selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount -->
+    </test> <!-- Chrome Test -->
+    <test started-at="2021-10-30T11:07:22 IST" name="Firefox Test" finished-at="2021-10-30T11:10:03 IST" duration-ms="161081">
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount">
+        <test-method is-config="true" signature="browserIntialization(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:07:22 IST" name="browserIntialization" finished-at="2021-10-30T11:07:22 IST" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserIntialization -->
+        <test-method is-config="true" signature="getData(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:07:22 IST" name="getData" finished-at="2021-10-30T11:07:22 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[fullstack@testleaf.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SelBootcamp$123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getData -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:34:50 IST" name="init" finished-at="2021-10-17T19:35:02 IST" duration-ms="11936" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:07:23 IST" name="init" finished-at="2021-10-30T11:07:38 IST" duration-ms="14241" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:02 IST" name="gotoCaseTab" finished-at="2021-10-17T19:35:13 IST" duration-ms="10190" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="newCaseCreationNegative(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:13 IST" name="newCaseCreationNegative" data-provider="data" finished-at="2021-10-17T19:35:25 IST" duration-ms="12133" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:07:38 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:08:08 IST" duration-ms="29977" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Mr.]]>
+                <![CDATA[sam kumar]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Velmurugan]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Subramanian]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[None]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Testing]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Automation Testing]]>
+                <![CDATA[Public]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newCaseCreationNegative -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:25 IST" name="tearDown" finished-at="2021-10-17T19:35:27 IST" duration-ms="2522" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:08:08 IST" name="tearDown" finished-at="2021-10-30T11:08:17 IST" duration-ms="8932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:27 IST" name="init" finished-at="2021-10-17T19:35:43 IST" duration-ms="15926" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:08:17 IST" name="init" finished-at="2021-10-30T11:08:37 IST" duration-ms="20745" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:43 IST" name="gotoCaseTab" finished-at="2021-10-17T19:35:56 IST" duration-ms="12430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="newCaseCreationNegative(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:35:56 IST" name="newCaseCreationNegative" data-provider="data" finished-at="2021-10-17T19:36:07 IST" duration-ms="11835" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:08:37 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:09:06 IST" duration-ms="28961" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Mr.]]>
+                <![CDATA[krish Anand]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Rajesh]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Kumar]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[None]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Dev]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Backend Developer]]>
+                <![CDATA[Private]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newCaseCreationNegative -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0156_CreateCasewithoutmandatoryfields@2767e23c]" started-at="2021-10-17T19:36:07 IST" name="tearDown" finished-at="2021-10-17T19:36:10 IST" duration-ms="2085" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:09:06 IST" name="tearDown" finished-at="2021-10-30T11:09:15 IST" duration-ms="8694" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- selenium.S017.S0156_CreateCasewithoutmandatoryfields -->
-      <class name="selenium.S017.S0155_DeleteCase">
-        <test-method is-config="true" signature="getData()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:24 IST" name="getData" finished-at="2021-10-17T19:33:24 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getData -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:24 IST" name="init" finished-at="2021-10-17T19:33:35 IST" duration-ms="11181" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:09:15 IST" name="init" finished-at="2021-10-30T11:09:29 IST" duration-ms="14106" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[https://www.salesforce.com/]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:35 IST" name="gotoCaseTab" finished-at="2021-10-17T19:33:45 IST" duration-ms="9994" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="deleteCase(java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:45 IST" name="deleteCase" data-provider="data" finished-at="2021-10-17T19:33:51 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="5764" status="PASS">
+        <test-method signature="newAccountCreate(java.lang.String,java.lang.String)[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:09:29 IST" name="newAccountCreate" data-provider="data" finished-at="2021-10-30T11:09:56 IST" duration-ms="27358" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[00001105]]>
+                <![CDATA[james Vasanth]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Subsidiary]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:51 IST" name="tearDown" finished-at="2021-10-17T19:33:53 IST" duration-ms="2521" status="PASS">
+        </test-method> <!-- newAccountCreate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount@70cf32e3]" started-at="2021-10-30T11:09:56 IST" name="tearDown" finished-at="2021-10-30T11:10:03 IST" duration-ms="6754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:33:53 IST" name="init" finished-at="2021-10-17T19:34:06 IST" duration-ms="12649" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.salesforce.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:06 IST" name="gotoCaseTab" finished-at="2021-10-17T19:34:16 IST" duration-ms="9651" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="deleteCase(java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:16 IST" name="deleteCase" data-provider="data" finished-at="2021-10-17T19:34:20 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="4737" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[00001106]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:20 IST" name="tearDown" finished-at="2021-10-17T19:34:22 IST" duration-ms="1625" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:22 IST" name="init" finished-at="2021-10-17T19:34:33 IST" duration-ms="10819" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.salesforce.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:33 IST" name="gotoCaseTab" finished-at="2021-10-17T19:34:43 IST" duration-ms="10311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="deleteCase(java.lang.String)[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:43 IST" name="deleteCase" data-provider="data" finished-at="2021-10-17T19:34:49 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="5457" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[00001107]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0155_DeleteCase@402c4085]" started-at="2021-10-17T19:34:49 IST" name="tearDown" finished-at="2021-10-17T19:34:50 IST" duration-ms="1796" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- selenium.S017.S0155_DeleteCase -->
-      <class name="selenium.S017.S0154_EditCase">
-        <test-method is-config="true" signature="getData()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:31:54 IST" name="getData" finished-at="2021-10-17T19:31:54 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getData -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:31:54 IST" name="init" finished-at="2021-10-17T19:32:05 IST" duration-ms="10708" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.salesforce.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:05 IST" name="gotoCaseTab" finished-at="2021-10-17T19:32:15 IST" duration-ms="10440" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="editCase(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:15 IST" name="editCase" data-provider="data" finished-at="2021-10-17T19:32:22 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="6281" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[00001105]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Phone]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Working]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Low]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:22 IST" name="tearDown" finished-at="2021-10-17T19:32:23 IST" duration-ms="1780" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:23 IST" name="init" finished-at="2021-10-17T19:32:34 IST" duration-ms="10644" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.salesforce.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:34 IST" name="gotoCaseTab" finished-at="2021-10-17T19:32:44 IST" duration-ms="9870" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="editCase(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:44 IST" name="editCase" data-provider="data" finished-at="2021-10-17T19:32:49 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="5357" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[00001106]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Phone]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Working]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Low]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:49 IST" name="tearDown" finished-at="2021-10-17T19:32:51 IST" duration-ms="1706" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:32:51 IST" name="init" finished-at="2021-10-17T19:33:09 IST" duration-ms="18062" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.salesforce.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fullstack@testleaf.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SelBootcamp$123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="gotoCaseTab()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:33:09 IST" name="gotoCaseTab" finished-at="2021-10-17T19:33:15 IST" duration-ms="6105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoCaseTab -->
-        <test-method signature="editCase(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:33:15 IST" name="editCase" data-provider="data" finished-at="2021-10-17T19:33:22 IST" depends-on-methods="selenium.S017.S0153_CreateNewCase.newCaseCreation" duration-ms="6815" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[00001107]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Email]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[In Progress]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[High]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editCase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.S017.S0154_EditCase@4681c175]" started-at="2021-10-17T19:33:22 IST" name="tearDown" finished-at="2021-10-17T19:33:24 IST" duration-ms="1847" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- selenium.S017.S0154_EditCase -->
-    </test> <!-- Test -->
+      </class> <!-- selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount -->
+    </test> <!-- Firefox Test -->
   </suite> <!-- Suite -->
 </testng-results>

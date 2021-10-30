@@ -67,3 +67,4 @@ public class S0155_DeleteCase extends BaseClass{
 		Assert.assertEquals(driver.findElement(By.xpath("//p/*[contains(@class,'rich-text-editor')]/span")).getText(),"No items to display.");
 	}
 }
+

@@ -1,42 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
   <parameter name="LoginID" value="fullstack@testleaf.com"/>
   <parameter name="URL" value="https://www.salesforce.com/"/>
   <parameter name="Password" value="SelBootcamp$123"/>
   <listeners>
     <listener class-name="selenium.utility.IAnnotationListener"/>
+    <listener class-name="selenium.utility.TestNGListeners"/>
   </listeners>
-  <test thread-count="2" name="Test(failed)" verbose="5">
-    <parameter name="Browser" value="Chrome"/>
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)" verbose="5">
+    <parameter name="Browser" value="Firefox"/>
     <classes>
-      <class name="selenium.S017.S0155_DeleteCase">
+      <class name="selenium.POM.ThreadLocal.testcases.S017.S0154_EditCase">
         <methods>
-          <include name="deleteCase"/>
-          <include name="init"/>
-          <include name="gotoCaseTab"/>
-          <include name="getData"/>
           <include name="tearDown"/>
-        </methods>
-      </class> <!-- selenium.S017.S0155_DeleteCase -->
-      <class name="selenium.S017.S0156_CreateCasewithoutmandatoryfields">
-        <methods>
+          <include name="editCase" invocation-numbers="0 0"/>
           <include name="init"/>
-          <include name="gotoCaseTab"/>
+          <include name="browserIntialization"/>
           <include name="getData"/>
-          <include name="tearDown"/>
-          <include name="newCaseCreationNegative" invocation-numbers="0 0"/>
         </methods>
-      </class> <!-- selenium.S017.S0156_CreateCasewithoutmandatoryfields -->
-      <class name="selenium.S017.S0153_CreateNewCase">
+      </class> <!-- selenium.POM.ThreadLocal.testcases.S017.S0154_EditCase -->
+      <class name="selenium.POM.ThreadLocal.testcases.S017.S0153_CreateNewCase">
         <methods>
+          <include name="tearDown"/>
+          <include name="writeCaseIDToExcel"/>
           <include name="newCaseCreation"/>
-          <include name="init"/>
-          <include name="tearDown"/>
           <include name="getData"/>
-          <include name="gotoCaseTab"/>
+          <include name="init"/>
+          <include name="browserIntialization"/>
         </methods>
-      </class> <!-- selenium.S017.S0153_CreateNewCase -->
+      </class> <!-- selenium.POM.ThreadLocal.testcases.S017.S0153_CreateNewCase -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

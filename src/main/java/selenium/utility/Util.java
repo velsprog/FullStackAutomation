@@ -18,6 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import selenium.POM.ThreadLocal.BaseClass.BaseClass;
 import selenium.S0110.S011072_DownloadPDF;
 
 public class Util {
@@ -47,10 +48,15 @@ public class Util {
 		return (winList.get(winList.size()-1));
 	}
 	
-	public String[][] readExcel(String fileName, String sheetName) {
+	public String[][] readExcel(String fileName, String sheetName,String Browser) {
 		
 		try {
-			fs = new FileInputStream(new File(".\\TestData\\"+fileName+".xlsx"));
+			if(Browser.equalsIgnoreCase("Chrome")) {
+				fs = new FileInputStream(new File(".\\TestData\\Chrome\\"+fileName+".xlsx"));
+			} else if(Browser.equalsIgnoreCase("Firefox")) {
+				fs = new FileInputStream(new File(".\\TestData\\Firefox\\"+fileName+".xlsx"));
+			}
+			
 			wb = new XSSFWorkbook(fs);
 			sheet=wb.getSheet(sheetName);
 			lastRowNum = sheet.getLastRowNum();
@@ -61,6 +67,9 @@ public class Util {
 					if(sheet.getRow(i).getCell(j).getCellType()==CellType.NUMERIC)
 					{
 						data[i-1][j]=Double.toString(sheet.getRow(i).getCell(j).getNumericCellValue());	
+					}
+					else if(sheet.getRow(i).getCell(j).getCellType()==null) {
+						data[i-1][j]="";
 					}
 					else {
 						data[i-1][j]=sheet.getRow(i).getCell(j).getStringCellValue();
@@ -77,22 +86,64 @@ public class Util {
 		return data;
 	}
 	
-	public void writeExcel(String fileName, String sheetName,String caseID,int row,int col) {
+	public void writeExcel(String fileName, String sheetName,String colName,String Browser) {
 		
+		System.out.println(BaseClass.caseID_Chrome);
+		System.out.println(BaseClass.caseID_Firefox);
+		int colIndex = 0;
 		try {
-			fs = new FileInputStream(new File(".\\TestData\\"+fileName+".xlsx"));
-			wb = new XSSFWorkbook(fs);
-			sheet=wb.getSheet(sheetName);
-			if(sheet.getRow(row)==null)
-			{
-				sheet.createRow(row).createCell(col).setCellValue(caseID);
-			} else if(sheet.getRow(row).getCell(col)==null) {
-				sheet.getRow(row).createCell(col).setCellValue(caseID);
+			if(Browser.equalsIgnoreCase("Chrome")) {
+				fs = new FileInputStream(new File(".\\TestData\\Chrome\\"+fileName+".xlsx"));
+				wb = new XSSFWorkbook(fs);
+				sheet=wb.getSheet(sheetName);
+				int rowNum=1;
+				int colNum=sheet.getRow(0).getLastCellNum();
+				for(int it=0;it<colNum;it++) {
+					if(sheet.getRow(0).getCell(it).getStringCellValue().equalsIgnoreCase(colName)) {
+						colIndex=it;
+						break;
+					}
+				}
+				for (String caseID : BaseClass.caseID_Chrome) {
+					if(sheet.getRow(rowNum)==null) {
+						sheet.createRow(rowNum).createCell(colIndex).setCellValue(caseID);
+					}else if (sheet.getRow(rowNum).getCell(colIndex)==null) {
+						sheet.getRow(rowNum).createCell(colIndex).setCellValue(caseID);
+					} else {
+						sheet.getRow(rowNum).getCell(colIndex).setCellValue(caseID);
+					}
+					rowNum++;
+				}
+			} else if(Browser.equalsIgnoreCase("Firefox")) {
+				fs = new FileInputStream(new File(".\\TestData\\Firefox\\"+fileName+".xlsx"));
+				wb = new XSSFWorkbook(fs);
+				sheet=wb.getSheet(sheetName);
+				int rowNum=1;
+				int colNum=sheet.getRow(0).getLastCellNum();
+				for(int it=0;it<colNum;it++) {
+					if(sheet.getRow(0).getCell(it).getStringCellValue().equalsIgnoreCase(colName)) {
+						colIndex=it;
+						break;
+					}
+				}
+				for (String caseID : BaseClass.caseID_Firefox) {
+					if(sheet.getRow(rowNum)==null) {
+						sheet.createRow(rowNum).createCell(colIndex).setCellValue(caseID);
+					}else if (sheet.getRow(rowNum).getCell(colIndex)==null) {
+						sheet.getRow(rowNum).createCell(colIndex).setCellValue(caseID);
+					} else {
+						sheet.getRow(rowNum).getCell(colIndex).setCellValue(caseID);
+					}
+					rowNum++;
+				}
 			}
-			else {
-				sheet.getRow(row).getCell(col).setCellValue(caseID);
+			
+			if(Browser.equalsIgnoreCase("Chrome")) {
+				fos = new FileOutputStream(new File(".\\TestData\\Chrome\\"+fileName+".xlsx"));
+			} else if(Browser.equalsIgnoreCase("Firefox")) {
+				fos = new FileOutputStream(new File(".\\TestData\\Firefox\\"+fileName+".xlsx"));
 			}
-			fos = new FileOutputStream(new File(".\\TestData\\"+fileName+".xlsx"));
+			//fos = new FileOutputStream(new File(".\\TestData\\"+fileName+".xlsx"));
 			wb.write(fos);
 			fos.close();
 			fs.close();
