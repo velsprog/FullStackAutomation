@@ -17,15 +17,12 @@ import selenium.POM.ThreadLocal.pages.LoginPage;
 public class S0154_EditCase extends BaseClass{
 	String LoginID,Password;
 	
-	@Parameters({"LoginID","Password"})
+	//@Parameters({"LoginID","Password"})
 	@BeforeClass(alwaysRun = true)
-	public void getData(String LoginID,
-						String Password ) {
+	public void getData() {
 		
 		fileName="S0154_EditCase";
 		sheetName="Sheet1";
-		this.LoginID=LoginID;
-		this.Password=Password;
 		
 	}
 	
@@ -35,10 +32,10 @@ public class S0154_EditCase extends BaseClass{
 						 String Priority) throws InterruptedException {
 		
 		System.out.println("Thread ID is : " + Thread.currentThread().getId());
-		
+		if(!(caseID==null)) {
 			new LoginPage(Browser)
-			.enterUsername(LoginID)
-			.enterPassword(Password)
+			.enterUsername(prop.getProperty("LoginID"))
+			.enterPassword(prop.getProperty("Password"))
 			.clickLoginButton()
 			.clickToggleMenu()
 			.clickViewAll()
@@ -52,6 +49,6 @@ public class S0154_EditCase extends BaseClass{
 			.selectPriority(Priority)
 			.clickSave()
 			.verifyStatusIsChanged(Status,caseID);
-			
+		}				
 	}
 }

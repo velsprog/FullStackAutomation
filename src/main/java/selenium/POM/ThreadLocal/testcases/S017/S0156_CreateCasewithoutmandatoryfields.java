@@ -17,16 +17,12 @@ public class S0156_CreateCasewithoutmandatoryfields extends BaseClass{
 	
 	String LoginID,Password;
 	
-	@Parameters({"LoginID","Password"})
+	//@Parameters({"LoginID","Password"})
 	@BeforeClass(alwaysRun = true)
-	public void getData(String LoginID,
-						String Password) {
+	public void getData() {
 		
 		fileName="S0156_CreateCaseNegative";
-		sheetName="Sheet1";
-		this.LoginID=LoginID;
-		this.Password=Password;
-		
+		sheetName="Sheet1";		
 	}
 	
 	@Test(dataProvider="data")
@@ -40,8 +36,8 @@ public class S0156_CreateCasewithoutmandatoryfields extends BaseClass{
 			System.out.println("Thread ID is : " + Thread.currentThread().getId());
 		
 			new LoginPage(Browser)
-			.enterUsername(LoginID)
-			.enterPassword(Password)
+			.enterUsername(prop.getProperty("LoginID"))
+			.enterPassword(prop.getProperty("Password"))
 			.clickLoginButton()
 			.clickToggleMenu()
 			.clickViewAll()

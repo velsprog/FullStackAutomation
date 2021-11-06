@@ -3,6 +3,7 @@ package selenium.POM.ThreadLocal.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,8 +15,6 @@ public class New_EditAccountPage extends BaseClass {
 	
 	public New_EditAccountPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	public New_EditAccountPage enterAccountName(String accountName) {
 		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='Name']")));
@@ -23,18 +22,33 @@ public class New_EditAccountPage extends BaseClass {
 		return this;
 	}
 	public New_EditAccountPage selectOwnership(String Ownership) {
-		getDriver().findElement(By.xpath("//label[text()='Ownership']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+Ownership+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Ownership']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Ownership']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+Ownership+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage selectType(String type) {
-		getDriver().findElement(By.xpath("//label[text()='Type']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+type+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Type']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Type']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+type+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage selectIndutry(String industry) {
-		getDriver().findElement(By.xpath("//label[text()='Industry']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+industry+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Industry']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Industry']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+industry+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage enterBillingAddress(String billAddress) {
@@ -64,18 +78,33 @@ public class New_EditAccountPage extends BaseClass {
 		return this;
 	}
 	public New_EditAccountPage selectPriority(String priority) {
-		getDriver().findElement(By.xpath("//label[text()='Customer Priority']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+priority+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Customer Priority']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Customer Priority']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+priority+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage selectSLA(String SLA) {
-		getDriver().findElement(By.xpath("//label[text()='SLA']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+SLA+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='SLA']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='SLA']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+SLA+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage selectActive(String active) {
-		getDriver().findElement(By.xpath("//label[text()='Active']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+active+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Active']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Active']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+active+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public New_EditAccountPage enterPhoneNumber(String phoneNum) {
@@ -84,8 +113,13 @@ public class New_EditAccountPage extends BaseClass {
 		return this;
 	}
 	public New_EditAccountPage selectOpportunity(String opportunity) {
-		getDriver().findElement(By.xpath("//label[text()='Upsell Opportunity']/parent::lightning-combobox//input")).click();
-		getDriver().findElement(By.xpath("//span[@title='"+opportunity+"']")).click();
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Upsell Opportunity']/parent::lightning-combobox//input")));
+		WebElement el = getDriver().findElement(By.xpath("//label[text()='Upsell Opportunity']/parent::lightning-combobox//input"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
+		el = getDriver().findElement(By.xpath("//span[@title='"+opportunity+"']"));
+		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
+		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public AccountsPage clickSave() {

@@ -15,8 +15,6 @@ public class NewCaseCreationPage extends BaseClass {
 	
 	public NewCaseCreationPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	
 	public NewCaseCreationPage clickSearchContact() {

@@ -14,8 +14,6 @@ public class LoginPage extends BaseClass {
 	
 	public LoginPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	public LoginPage enterUsername(String LoginID) {
 		getWait().until(ExpectedConditions.titleContains("Login"));

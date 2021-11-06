@@ -13,8 +13,6 @@ public class CreateNewContactPage extends BaseClass {
 	
 	public CreateNewContactPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	
 	public CreateNewContactPage selectSalutation(String Salutation) {

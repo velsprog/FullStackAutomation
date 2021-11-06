@@ -1,10 +1,14 @@
 package selenium.POM.ThreadLocal.BaseClass;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.SocketException;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,18 +41,27 @@ public class BaseClass extends DriverFactory {
 	public String Browser;
 	public static List<String> caseID_Chrome;
 	public static List<String> caseID_Firefox;
+	public static Properties prop;
+	public FileInputStream fis;
 	
-	@Parameters({"Browser"})
-	@BeforeClass(alwaysRun = true)
-	public void browserIntialization(String Browser) {
-		this.Browser=Browser;
+	@BeforeTest(alwaysRun = true)
+	public void listInitialization() {
 		caseID_Chrome = new LinkedList<>();
 		caseID_Firefox = new LinkedList<>();
 	}
 	
-	@Parameters({"URL"})
+	@Parameters({"Browser"})
+	@BeforeClass(alwaysRun = true)
+	public void browserIntialization(String Browser) throws IOException {
+		this.Browser=Browser;
+		fis = new FileInputStream(new File(".\\src\\main\\resources\\config.properties"));
+		prop = new Properties();
+		prop.load(fis);
+	}
+	
+	//@Parameters({"URL"})
 	@BeforeMethod(alwaysRun = true)
-	public void init(String URL) {
+	public void init() {
 		
 		System.out.println("Invoke Before Method");
 		
@@ -92,7 +105,7 @@ public class BaseClass extends DriverFactory {
 			getDriver().manage().window().maximize();
 			
 			// 1) Launch the app
-			getDriver().navigate().to(URL);
+			getDriver().navigate().to(prop.getProperty("URL"));
 			
 			//2) Click Login
 			getDriver().findElement(By.xpath("//div[@aria-label='Login']")).click();
@@ -118,12 +131,8 @@ public class BaseClass extends DriverFactory {
 			closeThread();
 		}
 	}
-	
 	@DataProvider(name = "data")
 	public String[][] testData() {
 		return new Util().readExcel(fileName,sheetName,Browser);		
 	}
-	
-	
-
 }

@@ -11,6 +11,7 @@ import java.util.Set;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.util.SystemOutLogger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -88,11 +89,10 @@ public class Util {
 	
 	public void writeExcel(String fileName, String sheetName,String colName,String Browser) {
 		
-		System.out.println(BaseClass.caseID_Chrome);
-		System.out.println(BaseClass.caseID_Firefox);
 		int colIndex = 0;
 		try {
 			if(Browser.equalsIgnoreCase("Chrome")) {
+				System.out.println(BaseClass.caseID_Chrome);
 				fs = new FileInputStream(new File(".\\TestData\\Chrome\\"+fileName+".xlsx"));
 				wb = new XSSFWorkbook(fs);
 				sheet=wb.getSheet(sheetName);
@@ -115,6 +115,7 @@ public class Util {
 					rowNum++;
 				}
 			} else if(Browser.equalsIgnoreCase("Firefox")) {
+				System.out.println(BaseClass.caseID_Firefox);
 				fs = new FileInputStream(new File(".\\TestData\\Firefox\\"+fileName+".xlsx"));
 				wb = new XSSFWorkbook(fs);
 				sheet=wb.getSheet(sheetName);

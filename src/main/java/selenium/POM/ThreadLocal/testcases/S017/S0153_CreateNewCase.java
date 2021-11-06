@@ -15,15 +15,12 @@ public class S0153_CreateNewCase extends BaseClass{
 	
 	String LoginID,Password;
 	
-	@Parameters({"LoginID","Password"})
+	//@Parameters({"LoginID","Password"})
 	@BeforeClass(alwaysRun = true)
-	public void getData(String LoginID,
-						String Password) {
+	public void getData() {
 		
 		fileName="S0153_CreateNewCase";
 		sheetName="Sheet1";
-		this.LoginID=LoginID;
-		this.Password=Password;
 		
 	}
 
@@ -38,8 +35,8 @@ public class S0153_CreateNewCase extends BaseClass{
 		System.out.println("Thread ID is : " + Thread.currentThread().getId());
 		
 		new LoginPage(Browser)
-		.enterUsername(LoginID)
-		.enterPassword(Password)
+		.enterUsername(prop.getProperty("LoginID"))
+		.enterPassword(prop.getProperty("Password"))
 		.clickLoginButton()
 		.clickToggleMenu()
 		.clickViewAll()
@@ -65,6 +62,7 @@ public class S0153_CreateNewCase extends BaseClass{
 	
 	@AfterClass
 	public void writeCaseIDToExcel() {
+//		System.out.println("Äfter Class Invoked to write in Excel...");
 		new CasesPage(Browser).writecaseIDbacktoExcel(sheetName);
 	}
 }

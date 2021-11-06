@@ -12,12 +12,18 @@
   <parameter name="Browser" value="Chrome" />
     <classes>
       <class name="selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount"/>
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0130_EditAccount"/>
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0131_DeleteAccount"/>
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0132_SortAccounts"/>
     </classes>
-  </test> <!-- Test -->
+  </test>
     <test name="Firefox Test">
     <parameter name="Browser" value="Firefox" />
     <classes>
       <class name="selenium.POM.ThreadLocal.testcases.S012.S0129_CreateNewAcount"/>
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0130_EditAccount"/>
+	  <class name="selenium.POM.ThreadLocal.testcases.S012.S0131_DeleteAccount"/>
+      <class name="selenium.POM.ThreadLocal.testcases.S012.S0132_SortAccounts"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+</suite>

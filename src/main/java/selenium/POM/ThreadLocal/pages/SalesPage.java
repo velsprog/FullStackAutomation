@@ -16,7 +16,6 @@ public class SalesPage extends BaseClass {
 	
 	public SalesPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
 	}
 	
 	public SalesPage clickMore() {

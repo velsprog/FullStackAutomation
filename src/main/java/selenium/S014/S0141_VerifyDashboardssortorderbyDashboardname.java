@@ -108,6 +108,8 @@ public class S0141_VerifyDashboardssortorderbyDashboardname {
 						noOfRows=Integer.parseInt(driver.findElement(By.xpath("//div[@class='test-listViewStatusInfo']/span")).getText().split(" ")[0]);
 					}
 				}
+				//System.out.println(expectedList);
+				//System.out.println(actualList);
 				System.out.println(expectedList.equals(actualList));
 				Assert.assertEquals(actualList, expectedList);
 		}

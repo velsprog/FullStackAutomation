@@ -14,8 +14,6 @@ public class HomePage extends BaseClass {
 	
 	public HomePage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	
 	public HomePage clickToggleMenu() throws InterruptedException {

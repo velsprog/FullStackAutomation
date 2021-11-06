@@ -18,8 +18,6 @@ public class CasesPage extends BaseClass {
 		
 	public CasesPage(String Browser) {
 		this.Browser=Browser;
-		System.out.println(Browser);
-		System.out.println("This. : "+this.Browser);
 	}
 	public CasesPage findCaseID(String caseID) {
 		getDriver().findElement(By.xpath("//th//a[text()='"+caseID+"']/ancestor::tr/td[7]//a")).click();
@@ -56,8 +54,6 @@ public class CasesPage extends BaseClass {
 		} else {
 			caseID_Firefox.add(caseID);
 		}
-		System.out.println(caseID_Chrome);
-		System.out.println(caseID_Firefox);
 	}
 	public void verifyStatusIsChanged(String Status,String caseID) throws InterruptedException {
 		//getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th//a[text()='"+caseID+"']/ancestor::tr/td[4]//span[@class='slds-truncate' and text()='"+Status+"']")));
@@ -76,7 +72,6 @@ public class CasesPage extends BaseClass {
 		getDriver().findElement(By.xpath("//input[contains(@placeholder,\"Search this list\")]")).sendKeys(caseID,Keys.ENTER);
 		getWait().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//p/*[contains(@class,'rich-text-editor')]/span"), "No items to display."));
 		Assert.assertEquals(getDriver().findElement(By.xpath("//p/*[contains(@class,'rich-text-editor')]/span")).getText(),"No items to display.");
-	
 	}
 	public void verifyTheErrorMessage() {
 		String errorText = getDriver().findElement(By.xpath("//ul[@class='errorsList']/li")).getText();
