@@ -3,14 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.POM.testcases.S017.S0153_CreateNewCase">
+      <class name="selenium.POM.ThreadLocal.CucumberRunner.Runner">
         <methods>
-          <include name="newCaseCreation"/>
-          <include name="init"/>
-          <include name="getData"/>
           <include name="tearDown"/>
+          <include name="setUpClass"/>
+          <include name="browserAndPropFileIntialization"/>
+          <include name="runScenario" invocation-numbers="5"/>
+          <include name="tearDownClass"/>
+          <include name="listInitialization"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- selenium.POM.testcases.S017.S0153_CreateNewCase -->
+      </class> <!-- selenium.POM.ThreadLocal.CucumberRunner.Runner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -33,7 +33,7 @@ import selenium.utility.Util;
 
 public class BaseClass extends DriverFactory {
 	
-	public static WebDriver browserInstance,driver;
+	public static WebDriver browserInstance;
 	public static WebDriverWait wait;
 	public static JavascriptExecutor js;
 	public String fileName;
@@ -50,13 +50,12 @@ public class BaseClass extends DriverFactory {
 		caseID_Firefox = new LinkedList<>();
 	}
 	
-	@Parameters({"Browser"})
 	@BeforeClass(alwaysRun = true)
-	public void browserIntialization(String Browser) throws IOException {
-		this.Browser=Browser;
+	public void browserAndPropFileIntialization() throws IOException {
 		fis = new FileInputStream(new File(".\\src\\main\\resources\\config.properties"));
 		prop = new Properties();
 		prop.load(fis);
+		this.Browser=prop.getProperty("Browsers");
 	}
 	
 	//@Parameters({"URL"})
@@ -84,22 +83,18 @@ public class BaseClass extends DriverFactory {
 				// Create Firefox Driver Object
 				browserInstance = new FirefoxDriver(option);
 			}
-			setDriver(browserInstance);
-			driver = getDriver();
-			
+			setDriver(browserInstance);	
 
 			// Create JavascriptExecutor instance and assign driver object
 			
-			js = (JavascriptExecutor) driver;
+			js = (JavascriptExecutor) browserInstance;
 			setJSExecutor(js);
-			js=getJSExecutor();
 			
 
 			// Wait Setup
 			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait = new WebDriverWait(browserInstance, Duration.ofSeconds(10));
 			setWait(wait);
-			wait=getWait();
 
 			// Maximize window
 			getDriver().manage().window().maximize();

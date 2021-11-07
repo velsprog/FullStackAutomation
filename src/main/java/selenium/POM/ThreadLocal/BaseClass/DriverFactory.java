@@ -4,7 +4,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DriverFactory {
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+
+public class DriverFactory extends AbstractTestNGCucumberTests {
 
 	private static DriverFactory instance=null;
 	
