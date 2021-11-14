@@ -1,5 +1,6 @@
-Feature: Account Feature
+Feature: Account Feature for Chrome
 
+@SIT
 Scenario Outline: Delete Account Functionality
 
 Given Enter Username as <username>

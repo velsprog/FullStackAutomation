@@ -18,18 +18,18 @@ public class SalesPage extends BaseClass {
 	
 	
 	public SalesPage clickMore() {
-		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='More']")));
-		getJSExecutor().executeScript("arguments[0].click();",getDriver().findElement(By.xpath("//span[text()='More']"))); 
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath($("SalesPage.MoreLink.xpath"))));
+		getJSExecutor().executeScript("arguments[0].click();",getDriver().findElement(By.xpath($("SalesPage.MoreLink.xpath")))); 
 		return this;
 	}
 	public CasesPage selectCaseFromDropDown() {
-		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'slds-dropdown')]//span[text()='Cases']")));
-		getJSExecutor().executeScript("arguments[0].click();",getDriver().findElement(By.xpath("//div[contains(@class,'slds-dropdown')]//span[text()='Cases']")));
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath($("SalesPage.SelectCase.xpath"))));
+		getJSExecutor().executeScript("arguments[0].click();",getDriver().findElement(By.xpath($("SalesPage.SelectCase.xpath"))));
 		return new CasesPage();
 	}
 	@And("Click Accounts Tab")
 	public AccountsPage clickAccountsTab() {
-		WebElement el = getDriver().findElement(By.xpath("//span[@class='slds-truncate' and text()='Accounts']"));
+		WebElement el = getDriver().findElement(By.xpath($("SalePage.AccountTab.xpath")));
 		getJSExecutor().executeScript("arguments[0].click();",el);
 		return new AccountsPage();
 	}

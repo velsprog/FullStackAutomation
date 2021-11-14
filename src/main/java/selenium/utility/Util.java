@@ -11,6 +11,7 @@ import java.util.Set;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.util.SystemOutLogger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;

@@ -16,53 +16,53 @@ public class NewCaseCreationPage extends BaseClass {
 	
 	
 	public NewCaseCreationPage clickSearchContact() {
-		getWait().until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath("//input[@title='Search Contacts']"))));
-		WebElement el = getDriver().findElement(By.xpath("//input[@title='Search Contacts']"));
+		getWait().until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath($("NewCaseCreationPage.SearchContact.xpath")))));
+		WebElement el = getDriver().findElement(By.xpath($("NewCaseCreationPage.SearchContact.xpath")));
 		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public CreateNewContactPage clickNewContact() {
-		getWait().until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath("//span[@title='New Contact']"))));
-		WebElement el = getDriver().findElement(By.xpath("//span[@title='New Contact']"));
+		getWait().until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath($("NewCaseCreationPage.NewContact.xpath")))));
+		WebElement el = getDriver().findElement(By.xpath($("NewCaseCreationPage.NewContact.xpath")));
 		getJSExecutor().executeScript("arguments[0].scrollIntoView();", el);
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		return new CreateNewContactPage();
 	}
 	public NewCaseCreationPage selectCaseOrigin(String CaseOrigin) {
-		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Case Origin']/parent::span/following-sibling::div//a[@class='select']")));
-		WebElement el = getDriver().findElement(By.xpath("//span[text()='Case Origin']/parent::span/following-sibling::div//a[@class='select']"));
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath($("NewCaseCreationPage.OriginDropdown.xpath"))));
+		WebElement el = getDriver().findElement(By.xpath($("NewCaseCreationPage.OriginDropdown.xpath")));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		el = getDriver().findElement(By.xpath("//ul[@class='scrollable']/li[@role='presentation']/a[@title='"+CaseOrigin+"']"));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public NewCaseCreationPage selectStatus(String Status) {
-		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Status']//following-sibling::div//input")));
-		WebElement el = getDriver().findElement(By.xpath("//label[text()='Status']//following-sibling::div//input"));
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath($("NewCaseCreationPage.StatusDropdown.xpath"))));
+		WebElement el = getDriver().findElement(By.xpath($("NewCaseCreationPage.StatusDropdown.xpath")));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		el = getDriver().findElement(By.xpath("//span[contains(@title,'"+Status+"')]"));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public NewCaseCreationPage selectPriority(String Priority) {
-		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Priority']/parent::span//following-sibling::div//a")));
-		WebElement el = getDriver().findElement(By.xpath("//span[text()='Priority']/parent::span//following-sibling::div//a"));
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath($("NewCaseCreationPage.PriorityDropdown.xpath"))));
+		WebElement el = getDriver().findElement(By.xpath($("NewCaseCreationPage.PriorityDropdown.xpath")));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		el = getDriver().findElement(By.xpath("//a[@title='"+Priority+"']"));
 		getJSExecutor().executeScript("arguments[0].click();", el);
 		return this;
 	}
 	public NewCaseCreationPage enterSubject(String Subject) {
-		getDriver().findElement(By.xpath("//span[text()='Subject']/parent::label/following-sibling::input")).sendKeys(Subject);
+		getDriver().findElement(By.xpath($("NewCaseCreationPage.Subject.xpath"))).sendKeys(Subject);
 		return this;
 	}
 	public NewCaseCreationPage enterDescription(String Description) {
-		getDriver().findElement(By.xpath("//span[text()='Description']/parent::label/following-sibling::textarea")).sendKeys(Description);
+		getDriver().findElement(By.xpath($("NewCaseCreationPage.Description.xpath"))).sendKeys(Description);
 		return this;
 	}
 	public CasesPage clickSave() {
-		getDriver().findElement(By.xpath("//div[@class='inlineFooter']//button[@title='Save']")).click();
+		getDriver().findElement(By.xpath($("General.Save.xpath"))).click();
 		return new CasesPage();
 	}
 

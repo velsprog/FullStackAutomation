@@ -41,7 +41,7 @@ public class BaseClass extends DriverFactory {
 	public String Browser;
 	public static List<String> caseID_Chrome;
 	public static List<String> caseID_Firefox;
-	public static Properties prop;
+	public static Properties prop,locprop;
 	public FileInputStream fis;
 	
 	@BeforeTest(alwaysRun = true)
@@ -50,12 +50,17 @@ public class BaseClass extends DriverFactory {
 		caseID_Firefox = new LinkedList<>();
 	}
 	
+	@Parameters("Browser")
 	@BeforeClass(alwaysRun = true)
-	public void browserAndPropFileIntialization() throws IOException {
-		fis = new FileInputStream(new File(".\\src\\main\\resources\\config.properties"));
+	public void browserAndPropFileIntialization(String Browser) throws IOException {
 		prop = new Properties();
+		fis = new FileInputStream(new File(".\\src\\main\\resources\\config.properties"));
 		prop.load(fis);
-		this.Browser=prop.getProperty("Browsers");
+		locprop=new Properties();
+		fis = new FileInputStream(new File(".\\src\\main\\resources\\Loc.properties"));
+		locprop.load(fis);
+		//this.Browser=prop.getProperty("Browsers");
+		this.Browser=Browser;
 	}
 	
 	//@Parameters({"URL"})
@@ -87,13 +92,13 @@ public class BaseClass extends DriverFactory {
 
 			// Create JavascriptExecutor instance and assign driver object
 			
-			js = (JavascriptExecutor) browserInstance;
+			js = (JavascriptExecutor) getDriver();
 			setJSExecutor(js);
 			
 
 			// Wait Setup
 			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-			wait = new WebDriverWait(browserInstance, Duration.ofSeconds(10));
+			wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 			setWait(wait);
 
 			// Maximize window
@@ -129,5 +134,10 @@ public class BaseClass extends DriverFactory {
 	@DataProvider(name = "data")
 	public String[][] testData() {
 		return new Util().readExcel(fileName,sheetName,Browser);		
+	}
+	
+	public static String $(String locKey) {
+		return locprop.getProperty(locKey);
+		
 	}
 }

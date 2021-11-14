@@ -1,5 +1,6 @@
-Feature: Account Feature
+Feature: Account Feature for Chrome
 
+@Functional @Smoke @SIT @UAT
 Scenario Outline: Create Account Functionality
 
 Given Enter Username as <username>

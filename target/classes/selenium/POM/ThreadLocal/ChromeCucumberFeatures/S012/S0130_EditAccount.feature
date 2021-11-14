@@ -1,5 +1,6 @@
-Feature: Account Feature
+Feature: Account Feature for Chrome
 
+@Smoke
 Scenario Outline: Edit Account Functionality
 
 Given Enter Username as <username>
