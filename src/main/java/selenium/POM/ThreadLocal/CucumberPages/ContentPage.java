@@ -35,20 +35,44 @@ public class ContentPage extends BaseClass{
 		Assert.assertEquals(actualText, "Task "+subject+" was created.");
 	}
 	
-	@And("Click the {string} for Edit Task")
-	public New_EditTaskPage clickEditForTask(String subject) throws InterruptedException {
+	@And("Click the {string} for {string}")
+	public New_EditTaskPage clickEditForTask(String subject,String option) throws InterruptedException {
 		getWait().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath($("General.FirstRecordinTable.xpath")), subject));
 		Thread.sleep(1000);
 		getDriver().findElement(By.xpath($("ContentPage.OptionsDropDown.xpath"))).click();
-		getDriver().findElement(By.xpath($("General.EditRecordButton.xpath"))).click();
+		if(option.equalsIgnoreCase("Edit Task")) {
+			getDriver().findElement(By.xpath($("General.EditRecordButton.xpath"))).click();
+		}else if(option.equalsIgnoreCase("Followup Event")) {
+			getDriver().findElement(By.xpath($("General.CreateFollowupEventButton.xpath"))).click();
+		}else if(option.equalsIgnoreCase("Followup Task")) {
+			getDriver().findElement(By.xpath($("General.CreateFollowupTaskButton.xpath"))).click();
+		}
 		return	new New_EditTaskPage();
 	}
+	/*
+	 * @And("Click the {string} for Creating Followup Event") public
+	 * New_EditTaskPage clickCreateFollowupEventForTask(String subject) throws
+	 * InterruptedException {
+	 * getWait().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath($
+	 * ("General.FirstRecordinTable.xpath")), subject)); Thread.sleep(1000);
+	 * getDriver().findElement(By.xpath($("ContentPage.OptionsDropDown.xpath"))).
+	 * click();
+	 * 
+	 * return new New_EditTaskPage(); }
+	 */
 	
 	@Then("Verify {string} is displaying in EditToastMessage") 
 	public void verifyEditToastMessage(String subject) {
 		getWait().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Task')]"), subject));
 		String actualText = getDriver().findElement(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Task')]")).getText();
 		Assert.assertEquals(actualText, "Task \""+subject+"\" was saved.");
+	}
+	
+	@Then("Verify {string} is displaying in EventToastMessage") 
+	public void verifyEventToastMessage(String subject) {
+		getWait().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Event')]"), subject));
+		String actualText = getDriver().findElement(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Event')]")).getText();
+		Assert.assertEquals(actualText, "Event "+subject+" was created.");
 	}
 	
 

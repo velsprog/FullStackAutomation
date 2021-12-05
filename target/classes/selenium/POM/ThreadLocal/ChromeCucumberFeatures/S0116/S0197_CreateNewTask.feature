@@ -1,7 +1,7 @@
 Feature: Task Feature for Chrome
 
-@Functional @Smoke @SIT @UAT
-Scenario Outline: Create New Account
+@Functional
+Scenario Outline: Create New Task
 
 Given Enter Username as "<username>"
 And Enter Password as "<password>"
