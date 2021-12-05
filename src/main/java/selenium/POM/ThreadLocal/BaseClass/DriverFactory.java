@@ -23,8 +23,8 @@ public class DriverFactory extends AbstractTestNGCucumberTests {
 	
 	
 	public static ThreadLocal<WebDriver> dr = new ThreadLocal<WebDriver>();
-	public static ThreadLocal<WebDriverWait> wt= new ThreadLocal<>();
-	public static ThreadLocal<JavascriptExecutor> jse=new ThreadLocal<>();
+	public static ThreadLocal<WebDriverWait> wt= new ThreadLocal<WebDriverWait>();
+	public static ThreadLocal<JavascriptExecutor> jse=new ThreadLocal<JavascriptExecutor>();
 	
 	public void setDriver(WebDriver driver) {
 		dr.set(driver);
