@@ -11,7 +11,7 @@ import selenium.POM.ThreadLocal.BaseClass.BaseClass;
 public class RunnerforS0116_Chrome extends BaseClass {
 	
 	@Override
-    @DataProvider(parallel = false)
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }

@@ -2,10 +2,6 @@ package selenium.S0110;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -45,7 +41,7 @@ public class S011066_CustomerServiceOptions {
 			driver = new ChromeDriver(option);
 
 			// Create JavascriptExecutor instance and assign driver object
-			js = (JavascriptExecutor) driver;
+			js = driver;
 			
 
 			// Wait Setup

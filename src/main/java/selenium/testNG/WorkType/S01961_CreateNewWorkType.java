@@ -85,6 +85,7 @@ public class S01961_CreateNewWorkType extends BaseClass {
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Work Type')]"), "Work Type"));
 			actualText=driver.findElement(By.xpath("//span[contains(@class,'toastMessage') and contains(text(),'Work Type')]")).getText();
 			Assert.assertEquals(actualText,"Work Type \""+workTypeName+"\" was created.");
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

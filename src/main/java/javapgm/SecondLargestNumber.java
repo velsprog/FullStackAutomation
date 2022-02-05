@@ -30,6 +30,7 @@ public class SecondLargestNumber {
 		
 		System.out.println(intArray[1]);
 		
+		
 		//Solution #2 :
 		arrList=Arrays.asList(intArray);
 		arrList.sort(Comparator.reverseOrder());

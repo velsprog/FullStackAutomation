@@ -20,6 +20,10 @@ public class Sample {
 		c.add(Calendar.DATE, 20);
 		String date = new SimpleDateFormat("dd/MM/yyyy").format(c.getTime());
 		System.out.println(date);
+		System.out.println(((int)(Math.random()*10000)));
+		
+        String s="07:05:45PM";
+        System.out.println(s.substring(0, s.length()-2));
 
 	}
 

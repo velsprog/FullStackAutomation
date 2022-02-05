@@ -28,6 +28,6 @@ Then Verify "<newsubject>" is displaying in ToastMessage
 
 Examples:
 |username              |password       |subject|newsubject|assignedTo    |namedropdown|name                  |relatedtodropdown|product    |priority|status     |
-|fullstack@testleaf.com|SelBootcamp$123|Email  |Call      |Derrick Dsouza|Contacts    |Velmurugan Subramanian|Products         |testproduct|High    |In Progress|
+|fullstack@testleaf.com|India$123|Email  |Call      |Derrick Dsouza|Contacts    |Velmurugan Subramanian|Products         |testproduct|High    |In Progress|
 
 

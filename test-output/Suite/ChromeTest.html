@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>ChromeTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/2</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 14 18:12:21 IST 2021</td>
+<td>Started on:</td><td>Fri Jan 21 19:25:32 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>315 seconds (315957 ms)</td>
+<tr><td>Total time:</td><td>47901 seconds (47901276 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,37 +67,448 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create New Task", "Optional[Task Feature for Chrome]"</td>
-<td></td>
-<td>76</td>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.tearDown()'><b>tearDown</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to shutdown.
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a8b014c87f3434ce4753d8b48bf9a0e2, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64052}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64052/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a8b014c87f3434ce4753d8b48bf9a0e2
+	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:274)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:126)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:614)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:455)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:287)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.tearDown(BaseClass.java:130)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for http://localhost:35166/shutdown to become unavailable after 36999569 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilUnavailable(UrlChecker.java:130)
+	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:270)
+	... 27 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at org.openqa.selenium.net.UrlChecker.waitUntilUnavailable(UrlChecker.java:128)
+	... 28 more
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace223612297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace223612297'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to shutdown.
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a8b014c87f3434ce4753d8b48bf9a0e2, quit {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64052}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64052/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a8b014c87f3434ce4753d8b48bf9a0e2
+	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:274)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:126)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:614)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:455)
+	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:287)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.tearDown(BaseClass.java:130)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:94)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for http://localhost:35166/shutdown to become unavailable after 36999569 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilUnavailable(UrlChecker.java:130)
+	at org.openqa.selenium.remote.service.DriverService.stop(DriverService.java:270)
+	... 27 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at org.openqa.selenium.net.UrlChecker.waitUntilUnavailable(UrlChecker.java:128)
+	... 28 more
+</pre></div></td>
+<td>47811</td>
+<td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
+<tr>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.init()'><b>init</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.71)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, clickElement {id=b6cf7f87-ed90-487e-ab47-be332426cf5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; xpath: //div[@aria-label=&apos;Login&apos;]]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.init(BaseClass.java:111)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace442530030", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace442530030'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.71)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, clickElement {id=b6cf7f87-ed90-487e-ab47-be332426cf5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; xpath: //div[@aria-label=&apos;Login&apos;]]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.init(BaseClass.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+</pre></div></td>
+<td>30</td>
+<td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Edit Task", "Optional[Task Feature for Chrome]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63482}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fdbedd5dfaf8e02182efd3a8780f7c91
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S01100_EditTask.feature:45)
+</pre></div><a href='#' onClick='toggleBox("stack-trace78616621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace78616621'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63482}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fdbedd5dfaf8e02182efd3a8780f7c91
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S01100_EditTask.feature:45)
+</pre></div></td>
+<td>25</td>
 <td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
 <tr>
 <td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Follow-Up Task For an Existing Task", "Optional[Task Feature for Chrome]"</td>
-<td></td>
-<td>36</td>
-<td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
-<tr>
-<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Follow-Up Event For an Existing Task", "Optional[Task Feature for Chrome]"</td>
-<td></td>
-<td>36</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (Session info: chrome=97.0.4692.71)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a8b014c87f3434ce4753d8b48bf9a0e2, findElement {using=xpath, value=//div[@class=&apos;slds-icon-waffle&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64052}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64052/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a8b014c87f3434ce4753d8b48bf9a0e2
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:197)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:193)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:631)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:628)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0199_CreateFollow-UpTask.feature:9)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace952025707", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace952025707'><pre>org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (Session info: chrome=97.0.4692.71)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a8b014c87f3434ce4753d8b48bf9a0e2, findElement {using=xpath, value=//div[@class=&apos;slds-icon-waffle&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64052}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64052/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a8b014c87f3434ce4753d8b48bf9a0e2
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:197)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:193)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:631)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:628)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0199_CreateFollow-UpTask.feature:9)
+</pre></div></td>
+<td>9</td>
 <td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
 <tr>
 <td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create New Task", "Optional[Task Feature for Chrome]"</td>
-<td></td>
-<td>74</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, sendKeysToElement {id=802b5f7d-5ba7-4f69-9e01-9eec1ac4495b, value=[Ljava.lang.CharSequence;@5a69111d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; id: password]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
+	at selenium.POM.ThreadLocal.CucumberPages.LoginPage.enterPassword(LoginPage.java:27)
+	at ?.Enter Password as &quot;SelBootcamp$123&quot;(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0197_CreateNewTask.feature:7)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace390401437", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace390401437'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, sendKeysToElement {id=802b5f7d-5ba7-4f69-9e01-9eec1ac4495b, value=[Ljava.lang.CharSequence;@5a69111d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; id: password]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
+	at selenium.POM.ThreadLocal.CucumberPages.LoginPage.enterPassword(LoginPage.java:27)
+	at ?.Enter Password as &quot;SelBootcamp$123&quot;(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0197_CreateNewTask.feature:7)
+</pre></div></td>
+<td>21</td>
 <td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
 <tr>
-<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Edit Task", "Optional[Task Feature for Chrome]"</td>
-<td></td>
-<td>31</td>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create New Task", "Optional[Task Feature for Chrome]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63486}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63486/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ce8dc0a36f0b6237148f8b240decd48c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S01100_EditTask.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace26914081", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace26914081'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63486}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63486/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ce8dc0a36f0b6237148f8b240decd48c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S01100_EditTask.feature:9)
+</pre></div></td>
+<td>24</td>
+<td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Follow-Up Task For an Existing Task", "Optional[Task Feature for Chrome]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63483}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63483/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 24ae0f42906b64b197602ee8f6ef81d5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0199_CreateFollow-UpTask.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace897939556", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace897939556'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;slds-icon-waffle&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63483}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63483/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 24ae0f42906b64b197602ee8f6ef81d5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at selenium.POM.ThreadLocal.CucumberPages.HomePage.clickToggleMenu(HomePage.java:19)
+	at ?.Click ToggleMenu(file:///C:/Users/velsp/eclipse-workspace/FullStackAutomationPgm/../FullStackAutomationPgm/src/main/java/selenium/POM/ThreadLocal/ChromeCucumberFeatures/S0116/S0199_CreateFollow-UpTask.feature:9)
+</pre></div></td>
+<td>26</td>
+<td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
+<tr>
+<td title='selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome.runScenario()'><b>runScenario</b><br>Test class: selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Follow-Up Event For an Existing Task", "Optional[Task Feature for Chrome]"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.71)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, clickElement {id=b6cf7f87-ed90-487e-ab47-be332426cf5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; xpath: //div[@aria-label=&apos;Login&apos;]]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.init(BaseClass.java:111)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace667162270", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace667162270'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.71)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.0.0-rc-2&apos;, revision: &apos;8d1e4aa5ae&apos;
+System info: host: &apos;DESKTOP-BI2JSEP&apos;, ip: &apos;192.168.43.52&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b750f7f99fa29cf02f23e73841b2419a, clickElement {id=b6cf7f87-ed90-487e-ab47-be332426cf5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\velsp\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63484/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b750f7f99fa29cf02f23e73841b2419a)] -&gt; xpath: //div[@aria-label=&apos;Login&apos;]]
+Session ID: b750f7f99fa29cf02f23e73841b2419a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at selenium.POM.ThreadLocal.BaseClass.BaseClass.init(BaseClass.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+</pre></div></td>
+<td>0</td>
 <td>selenium.POM.ThreadLocal.CucumberRunner.RunnerforS0116_Chrome@1972e513</td></tr>
 </table><p>
 </body>

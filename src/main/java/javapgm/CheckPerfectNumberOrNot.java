@@ -1,5 +1,8 @@
 package javapgm;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CheckPerfectNumberOrNot {
@@ -20,6 +23,8 @@ public class CheckPerfectNumberOrNot {
 		} else {
 			System.out.println("Given Number is Not a perfect Number");
 		}
+		System.out.println(Days.SATURDAY);
+		
 		sc.close();
 
 	}

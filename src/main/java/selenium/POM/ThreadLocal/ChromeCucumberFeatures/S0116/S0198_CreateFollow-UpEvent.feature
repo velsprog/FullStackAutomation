@@ -28,6 +28,6 @@ Then Verify "<newsubject>" is displaying in EventToastMessage
 
 Examples:
 |username              |password       |subject|newsubject|assignedTo    |namedropdown|name                  |startdate_month   |startdate_day|startdate_time|enddate_month   |enddate_day|enddate_time|relatedtodropdown|product    |
-|fullstack@testleaf.com|SelBootcamp$123|Email  |Meeting   |Derrick Dsouza|Contacts    |Velmurugan Subramanian|December          |10           |8:30 AM       |December        |18         |5:00 PM     |Products         |testproduct|
+|fullstack@testleaf.com|India$123|Email  |Meeting   |Derrick Dsouza|Contacts    |Velmurugan Subramanian|December          |10           |8:30 AM       |December        |18         |5:00 PM     |Products         |testproduct|
 
 

@@ -31,7 +31,7 @@ Then Verify "<subject>" is displaying in ToastMessage
 
 Examples:
 |username              |password       |assignedTo    |subject|priority|status     |namedropdown|name       |relatedtodropdown|productname|
-|fullstack@testleaf.com|SelBootcamp$123|Derrick Dsouza|Email  |High    |In Progress|Contacts    |Sayoni Dave|Products         |testproduct|
+|fullstack@testleaf.com|India$123|Derrick Dsouza|Email  |High    |In Progress|Contacts    |Sayoni Dave|Products         |testproduct|
 
 
 
@@ -62,6 +62,6 @@ Then Verify "<subject>" is displaying in EditToastMessage
 
 Examples:
 |username              |password       |subject|month   |date|relatedtodropdown|accountname|
-|fullstack@testleaf.com|SelBootcamp$123|Email  |December|18  |Accounts         |Chris Kong |
+|fullstack@testleaf.com|India$123|Email  |December|18  |Accounts         |Chris Kong |
 
 

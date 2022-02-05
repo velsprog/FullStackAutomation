@@ -44,7 +44,6 @@ public class S01961_CreateNewWorkType_Saucelab_Run {
 
 			// Webdriver Setup
 //			WebDriverManager.chromedriver().setup();
-
 			// ChromeOption Setup
 			option = new ChromeOptions();
 			option.addArguments("--disable-notifications");
